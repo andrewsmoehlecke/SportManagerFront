@@ -21,6 +21,7 @@ export class TimeComponent implements OnInit {
 
   public initForm(): void {
     this.formTime = this.formBuilder.group({
+      id_time: [''],
       nomeTime: ['', Validators.required],
       numVitoria: [''],
       numEmpate: [''],
@@ -30,22 +31,23 @@ export class TimeComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id_time = 1;
+    let idTime = 1;
 
-    this.api.getTimeById(id_time).subscribe((data) => {
-      console.debug(data.nomeTime)
+    this.api.getTimeById(idTime).subscribe((data) => {
+      console.debug(data.idTime + ", " + data.nomeTime);
       this.formTime.patchValue({
-        id: data.id_time,
+        idTime: data.idTime,
         nomeTime: data.nomeTime,
         numVitoria: data.numVitoria,
         numEmpate: data.numEmpate,
         numDerrota: data.numDerrota,
         dataCriacao: data.dataCriacao,
       });
-      console.debug("Recebeu o Form");
+      this.formTime = this.formTime.value;
+      console.debug(this.formTime);
     },
       (err) => {
-        console.error("Algo de errado n está certo " + err);
+        console.error("Algo de errado não está certo " + err);
       });
   }
 

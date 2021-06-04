@@ -40,6 +40,7 @@ export class ApiService {
     return this.http.get<TimeDto>(this.getURL(["time/"+id_time]), { headers: headers })
       .pipe(
         map((data) => {
+          console.debug(data);
           return data;
         }),
         catchError((err: HttpErrorResponse) => {
