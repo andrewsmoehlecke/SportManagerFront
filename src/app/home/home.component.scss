@@ -1,8 +1,141 @@
+/* --------------------------------- HEADER --------------------------------- */
+/* --------------------------------- HEADER --------------------------------- */
+/* --------------------------------- HEADER --------------------------------- */
+
+header {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #2a2a2a;
+  height: 85px;
+
+  nav {
+    display: inline-block;
+
+    .nav-imagem-h1 {
+      display: inline-block;
+      background-color: #2a2a2a;
+
+      .nav-button-img {
+        background-color: #2a2a2a;
+        border: none;
+        border-radius: 10px;
+
+        .nav-imagem {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .nav-button-img:hover, .nav-imagem:hover {
+        cursor: pointer;
+        background-color: #aaaaaa;
+      }
+    }
+
+    .nav-list {
+      display: inline-block;
+      vertical-align: top;
+
+      .nav-item {
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+
+        .nav-button {
+          background-color: #2a2a2a;
+          color: #ffffff;
+          border: none;
+          width: 200px;
+          height: 85px;
+          text-align: center;
+          border-radius: 10px;
+
+          .nav-paragrafo {
+            display: block;
+            margin: 0 auto;
+            font-size: 16px;
+            font-weight: bolder;
+          }
+
+          .nav-imgs {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto;
+          }
+        }
+
+        .nav-button:hover {
+          cursor: pointer;
+          background-color: #aaaaaa;
+        }
+      }
+    }
+  }
+
+  .usuario-logado {
+    display: inline-block;
+
+    .usuario-button {
+      background-color: #2a2a2a;
+      border: none;
+      color: #ffffff;
+      text-align: center;
+      margin-left: 768.5px;
+
+      .usuario-img {
+        display: inline-block;
+        background-color: #ff0000;
+        border-radius: 50%;
+        width: 80px;
+      }
+
+      .usuario-nome {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: bold;
+        vertical-align: 30px;
+        margin-right: 10px;
+      }
+    }
+
+    .usuario-button:hover {
+      cursor: pointer;
+      background-color: #aaaaaa;
+      border-radius: 10px;
+    }
+  }
+}
+
+/* --------------------------------- MAIN --------------------------------- */
+/* --------------------------------- MAIN --------------------------------- */
+/* --------------------------------- MAIN --------------------------------- */
+
 main {
-  background-color: purple;
-  color: green;
-  h1 {
-    padding: 499px 400px;
-    font-size: 80px;
+  h4 {
+    display: block;
+    font-size: 30px;
+    color: #ffffff;
+  }
+}
+
+/* --------------------------------- FOOTER --------------------------------- */
+/* --------------------------------- FOOTER --------------------------------- */
+/* --------------------------------- FOOTER --------------------------------- */
+
+footer {
+  background-color: #2a2a2a;
+  padding: 50px;
+  text-align: center;
+  border-top: 3px solid #191919;
+
+  .footer-imagem {
+    width: 200px;
+  }
+
+  .footer-copyright {
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 17px;
   }
 }
