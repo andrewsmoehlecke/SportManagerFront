@@ -1,5 +1,5 @@
 export interface TimeDto {
-    id_time: Number;
+    idTime: Number;
     nomeTime: String;
     numVitoria: Number;
     numEmpate: Number;
