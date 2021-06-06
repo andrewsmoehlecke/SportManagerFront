@@ -1,14 +1,14 @@
 <main>
   <div class="login-form">
-    <form>
+    <form [formGroup]="formLogin">
       <h1 class="login-imagem-h1"><img class="login-logo" src="../../assets/img/logo.png"></h1>
       <h2 class="login-texto">Login</h2>
 
-      <label class="login-label">Email</label>
-      <input class="login-input" type="email">
+      <label class="login-label">Username</label>
+      <input class="login-input" type="text" formControlName="username">
 
       <label class="login-label">Senha</label>
-      <input class="login-input" type="password">
+      <input class="login-input" type="password" formControlName="senha">
 
       <p class="login-cadastro">Não possui um cadastro? <a class="login-link" routerLink="/cadastro">Cadastre-se</a></p>
 

@@ -1,4 +1,6 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public formLogin: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) {
+    this.initForm();
+  }
+
+  public initForm(): void {
+    this.formLogin = this.formBuilder.group({
+      username: ['', Validators.required],
+      senha: ['', Validators.required],
+    });
+  }
 
   ngOnInit(): void {
   }

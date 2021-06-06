@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
@@ -15,8 +16,12 @@ export class CadastroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
+    private router: Router
   ) {
     this.initForm();
+  }
+
+  ngOnInit(): void {
   }
 
   public initForm(): void {
@@ -25,26 +30,54 @@ export class CadastroComponent implements OnInit {
       username: ['', Validators.required],
       email: ['', Validators.required],
       senha: ['', Validators.required],
+      confirmar_senha: ['', Validators.required],
       dataCriacao: [''],
     });
   }
 
-  ngOnInit(): void {
-  }
-
   cadastrar() {
-    this.api.cadastrarUsuario(this.formCadastro.value).subscribe((data) => {
-      console.debug("Usuario Cadastrado");
-    },
-      (err) => {
+    if (this.formCadastro.valid) {
+      if (this.formCadastro.value.senha == this.formCadastro.value.confirmar_senha) {
+
+        this.api.cadastrarUsuario(this.formCadastro.value).subscribe((data) => {
+          console.debug("Usuario Cadastrado");
+
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Usuario criado com sucesso!',
+            timer: 2000,
+            showConfirmButton: false
+          });
+          this.router.navigate(['/login']);
+        },
+          (err) => {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Não foi possível efetuar o cadastro! :(',
+              timer: 2500,
+              showConfirmButton: false
+            });
+            console.error("Algo de errado não está certo " + err);
+          });
+      } else {
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Não foi possível efetuar o cadastro! :(',
-          timer: 2000
-        })
-        console.error("Algo de errado não está certo " + err);
+          title: 'As senhas não coincidem! Tente Novamente',
+          showConfirmButton: true
+        });
+      }
+    } else {
+      Swal.fire({
+        position: 'center',
+        icon: 'warning',
+        title: 'Por favor, preencha todos os campos!',
+        timer: 2500,
+        showConfirmButton: false
       });
+    }
   }
 
 }

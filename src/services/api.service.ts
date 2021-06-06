@@ -67,16 +67,15 @@ export class ApiService {
       );
   }
 
-  cadastrarUsuario(data): Observable<any> {
+  cadastrarUsuario(form): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     });
 
-    return this.http.post<any>(this.getURL(["usuario"]), JSON.stringify(data), { headers: headers })
+    return this.http.post<any>(this.getURL(["usuario"]), JSON.stringify(form), { headers: headers })
       .pipe(
         map((data) => {
-          console.debug(data);
           return data;
         }),
         catchError((err: HttpErrorResponse) => {
