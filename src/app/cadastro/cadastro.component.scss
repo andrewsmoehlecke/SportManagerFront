@@ -20,6 +20,18 @@ main {
       text-align: center;
     }
 
+    .cadastro-logo {
+      width: 225px;
+      padding: 60px;
+    }
+
+    .cadastro-texto {
+      font-size: 26px;
+      color: #FFFFFF;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
     .cadastro-label {
       color: #FFFFFF;
       font-size: bold;
@@ -48,6 +60,11 @@ main {
       padding: 10px;
       border: 3px solid #191919;
       border-radius: 10px;
+    }
+
+    .cadastro-botao:hover {
+      cursor: pointer;
+      background-color: #aaaaaa;
     }
 
     .cadastro-botao-link {
