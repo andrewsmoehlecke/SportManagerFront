@@ -31,7 +31,7 @@ export class TimeComponent implements OnInit {
   }
 
   ngOnInit() {
-    let idTime = 1;
+    let idTime = 3;
 
     this.api.getTimeById(idTime).subscribe((data) => {
       console.debug(data.idTime + ", " + data.nomeTime);
@@ -43,12 +43,19 @@ export class TimeComponent implements OnInit {
         numDerrota: data.numDerrota,
         dataCriacao: data.dataCriacao,
       });
-      this.formTime = this.formTime.value;
       console.debug(this.formTime);
     },
       (err) => {
         console.error("Algo de errado não está certo " + err);
       });
+
+    // get all times
+    // this.api.getAllTimes().subscribe((data) => {
+    //   console.debug(data);
+    // },
+    //   (err) => {
+    //     console.error("Algo de errado não está certo " + err);
+    //   });
   }
 
 }

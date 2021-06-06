@@ -1,29 +1,37 @@
 <form [formGroup]="formTime">
-    <!-- <h2>Configurações do Time {{formTime.nomeTime}}</h2> -->
+        <h2>Configurações do Time {{formTime.value.nomeTime}}</h2>
 
-    <div class="input">
-            <label for="nomeTime">Nome do Time</label>
-            <!-- <input *ngIf="this.formTime.nomeTime == undefined" type="text" formControlName="nomeTime" > -->
-            <!-- <input *ngIf="this.formTime.nomeTime != undefined" type="text" formControlName="nomeTime" [value]="this.formTime.nomeTime"> -->
-    </div>
-    <!-- <div class="input">
-            <label for="numVitoria">Número de Vitórias</label>
-            <input *ngIf="this.formTime.numVitoria == undefined" type="text" formControlName="numVitoria" >
-            <input *ngIf="this.formTime.numVitoria != undefined" type="text" formControlName="numVitoria" [value]="this.formTime.numVitoria">
-    </div>
-    <div class="input">
-            <label for="numEmpate">Número de Empates</label>
-            <input *ngIf="this.formTime.numEmpate == undefined" type="text" formControlName="numEmpate" >
-            <input *ngIf="this.formTime.numEmpate != undefined" type="text" formControlName="numEmpate" [value]="this.formTime.numEmpate">
-    </div>
-    <div class="input">
-            <label for="numDerrota">Número de Derrota</label>
-            <input *ngIf="this.formTime.numDerrota == undefined" type="text" formControlName="numDerrota" >
-            <input *ngIf="this.formTime.numDerrota != undefined" type="text" formControlName="numDerrota" [value]="this.formTime.numDerrota">
-    </div>
-    <div class="input">
-            <label for="dataCriacao">Data de Criação</label>
-            <input *ngIf="this.formTime.dataCriacao == undefined" type="text" formControlName="dataCriacao" >
-            <input *ngIf="this.formTime.dataCriacao != undefined" type="text" formControlName="dataCriacao" [value]="this.formTime.dataCriacao">
-    </div> -->
+        <div class="input">
+                <label for="nomeTime">Nome do Time</label>
+                <input *ngIf="formTime.value.nomeTime == undefined" type="text" formControlName="nomeTime">
+                <input *ngIf="formTime.value.nomeTime != undefined" type="text" formControlName="nomeTime"
+                        [value]="formTime.value.nomeTime">
+        </div>
+        <div class="input">
+                <label for="numVitoria">Número de Vitórias</label>
+                <input *ngIf="formTime.value.numVitoria == undefined" type="text" formControlName="numVitoria">
+                <input *ngIf="formTime.value.numVitoria != undefined" type="text" formControlName="numVitoria"
+                        [value]="formTime.value.numVitoria">
+        </div>
+        <div class="input">
+                <label for="numEmpate">Número de Empates</label>
+                <input *ngIf="formTime.value.numEmpate == undefined" type="text" formControlName="numEmpate">
+                <input *ngIf="formTime.value.numEmpate != undefined" type="text" formControlName="numEmpate"
+                        [value]="formTime.value.numEmpate">
+        </div>
+        <div class="input">
+                <label for="numDerrota">Número de Derrota</label>
+                <input *ngIf="formTime.value.numDerrota == undefined" type="text" formControlName="numDerrota">
+                <input *ngIf="formTime.value.numDerrota != undefined" type="text" formControlName="numDerrota"
+                        [value]="formTime.value.numDerrota">
+        </div>
+        <div class="input">
+                <label for="dataCriacao">Data de Criação</label>
+                <input *ngIf="formTime.value.dataCriacao == undefined" type="text" formControlName="dataCriacao"
+                        [matDatepicker]="picker">
+                <input *ngIf="formTime.value.dataCriacao != undefined" type="text" formControlName="dataCriacao"
+                        [value]="formTime.value.dataCriacao" [matDatepicker]="picker">
+                <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker> -->
+        </div>
 </form>

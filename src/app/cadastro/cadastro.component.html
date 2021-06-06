@@ -1,18 +1,18 @@
 <main>
   <div class="cadastro-form">
-    <form>
+    <form [formGroup]="formCadastro">
       <h1 class="cadastro-imagem-h1"><img class="cadastro-logo" src="../../assets/img/logo.png"></h1>
 
       <label class="cadastro-label">Email</label>
-      <input class="cadastro-input" type="email">
+      <input class="cadastro-input" type="email" formControlName="email">
 
       <label class="cadastro-label">Username</label>
-      <input class="cadastro-input" type="text">
+      <input class="cadastro-input" type="text" formControlName="username">
 
       <label class="cadastro-label">Senha</label>
-      <input class="cadastro-input" type="password">
+      <input class="cadastro-input" type="password" formControlName="senha">
 
-      <button class="cadastro-botao">Cadastrar</button>
+      <button class="cadastro-botao" (click)="cadastrar()">Cadastrar</button>
     </form>
   </div>
 </main>

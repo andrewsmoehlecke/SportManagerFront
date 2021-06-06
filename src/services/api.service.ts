@@ -31,13 +31,49 @@ export class ApiService {
     }
   }
 
-  getTimeById(id_time:Number): Observable<TimeDto> {
+  getTimeById(id_time: Number): Observable<TimeDto> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     });
 
-    return this.http.get<TimeDto>(this.getURL(["time/"+id_time]), { headers: headers })
+    return this.http.get<TimeDto>(this.getURL(["time/" + id_time]), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug(data);
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getAllTimes(): Observable<TimeDto[]> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<TimeDto[]>(this.getURL(["time"]), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug(data);
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  cadastrarUsuario(data): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<any>(this.getURL(["usuario"]), JSON.stringify(data), { headers: headers })
       .pipe(
         map((data) => {
           console.debug(data);
