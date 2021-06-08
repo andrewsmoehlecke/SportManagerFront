@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioDto } from 'src/model/UsuarioDto';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 
 @Component({
   selector: 'app-time',
@@ -11,12 +13,15 @@ import { ApiService } from 'src/services/api.service';
 export class TimeComponent implements OnInit {
 
   public formTime: FormGroup;
+  private usuario: UsuarioDto;
 
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
+    private usuarioLogado: UsuarioLogado,
   ) {
     this.initForm();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   public initForm(): void {
@@ -31,6 +36,7 @@ export class TimeComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.debug(this.usuario)
     let idTime = 3;
 
     this.api.getTimeById(idTime).subscribe((data) => {
@@ -48,14 +54,6 @@ export class TimeComponent implements OnInit {
       (err) => {
         console.error("Algo de errado não está certo " + err);
       });
-
-    // get all times
-    // this.api.getAllTimes().subscribe((data) => {
-    //   console.debug(data);
-    // },
-    //   (err) => {
-    //     console.error("Algo de errado não está certo " + err);
-    //   });
   }
 
 }

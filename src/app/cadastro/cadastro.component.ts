@@ -43,7 +43,6 @@ export class CadastroComponent implements OnInit {
       if (this.formCadastro.value.senha == this.formCadastro.value.confirmar_senha) {
 
         this.api.cadastrarUsuario(this.formCadastro.value).subscribe((data) => {
-          console.debug("Usuario Cadastrado");
           this.usuarioLogado.saveUsuarioLogado(data);
 
           Swal.fire({
@@ -53,7 +52,7 @@ export class CadastroComponent implements OnInit {
             timer: 2000,
             showConfirmButton: false
           });
-          this.router.navigate(['/login']);
+          this.router.navigate(['/home']);
         },
           (err) => {
             Swal.fire({

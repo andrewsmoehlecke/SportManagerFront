@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UsuarioDto } from 'src/model/UsuarioDto';
@@ -18,11 +18,11 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private api: ApiService,
     private usuarioLogado: UsuarioLogado,
   ) {
     this.initForm();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   public initForm(): void {
@@ -37,6 +37,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuario = this.usuarioLogado.getUsuarioLogado();
+    console.debug(this.usuario);
   }
 }
