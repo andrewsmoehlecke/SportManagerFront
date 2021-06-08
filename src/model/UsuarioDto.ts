@@ -4,4 +4,5 @@ export interface UsuarioDto {
     email: String;
     senha: String;
     dataCriacao: Date;
+    fotoPerfil: String;
 }

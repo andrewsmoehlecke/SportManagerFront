@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { TimeDto } from 'src/model/TimeDto';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,40 @@ export class ApiService {
     });
 
     return this.http.post<any>(this.getURL(["usuario"]), JSON.stringify(form), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  logarUsuario(form): Observable<UsuarioDto> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<UsuarioDto>(this.getURL(["usuario/login"]), JSON.stringify(form), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getUsuarioById(id: Number): Observable<UsuarioDto> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<UsuarioDto>(this.getURL(["usuario/" + id]), { headers: headers })
       .pipe(
         map((data) => {
           return data;

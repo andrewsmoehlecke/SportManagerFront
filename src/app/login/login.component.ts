@@ -1,6 +1,9 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +16,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private api: ApiService,
+    private router: Router,
+    private usuarioLogado: UsuarioLogado,
   ) {
     this.initForm();
   }
@@ -27,4 +33,21 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logar() {
+    this.api.logarUsuario(this.formLogin.value).subscribe((data) => {
+      this.usuarioLogado.saveUsuarioLogado(data);
+      console.debug("Usuario Logado");
+      this.router.navigate(['/home']);
+    },
+      (err) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Usuário ou senha incorretos! :(',
+          timer: 2500,
+          showConfirmButton: false
+        });
+        console.error("Algo de errado não está certo " + err);
+      });
+  }
 }

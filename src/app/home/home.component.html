@@ -2,7 +2,8 @@
   <nav>
     <ul class="nav-list">
       <li class="nav-item">
-        <h1 class="nav-imagem-h1"><button class="nav-button-img"><img class="nav-imagem" src="../../assets/img/logo.png"></button></h1>
+        <h1 class="nav-imagem-h1"><button class="nav-button-img"><img class="nav-imagem"
+              src="../../assets/img/logo.png"></button></h1>
       </li>
       <li class="nav-item">
         <button class="nav-button">
@@ -32,10 +33,14 @@
         <div class="usuario-logado">
           <button class="usuario-button">
             <div class="usuario-nome-div">
-              <h2 class="usuario-nome">oAngular</h2>
+              <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div">
-              <img class="usuario-img" src="../../assets/img/oangulo.png">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
+              <img class="usuario-img"
+                src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
+              <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
         </div>

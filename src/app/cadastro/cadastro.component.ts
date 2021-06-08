@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
 import Swal from 'sweetalert2';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +17,8 @@ export class CadastroComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
-    private router: Router
+    private router: Router,
+    private usuarioLogado: UsuarioLogado,
   ) {
     this.initForm();
   }
@@ -32,6 +34,7 @@ export class CadastroComponent implements OnInit {
       senha: ['', Validators.required],
       confirmar_senha: ['', Validators.required],
       dataCriacao: [''],
+      fotoPerfil: [''],
     });
   }
 
@@ -41,6 +44,7 @@ export class CadastroComponent implements OnInit {
 
         this.api.cadastrarUsuario(this.formCadastro.value).subscribe((data) => {
           console.debug("Usuario Cadastrado");
+          this.usuarioLogado.saveUsuarioLogado(data);
 
           Swal.fire({
             position: 'center',
