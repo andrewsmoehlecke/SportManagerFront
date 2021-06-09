@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
+import { TimesComponent } from './times/times.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
     TimeComponent,
     CadastroComponent,
     HomeComponent,
+    TimesComponent,
   ],
   imports: [
     BrowserModule,
