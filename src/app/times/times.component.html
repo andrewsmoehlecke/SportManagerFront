@@ -51,11 +51,10 @@
 
 <main>
   <mat-list>
-    <mat-list-item *ngFor="">
-      <div mat-line></div>
-      <div mat-line></div>
-      <div mat-line></div>
-      <div mat-line></div>
+    <mat-list-item *ngFor="let time of allTimes">
+      <div mat-line>Time {{time.nomeTime}}</div>
+      <div mat-line>Vitórias {{time.numVitoria}}</div>
+      <div mat-line>Derrotas {{time.numDerrota}}</div>
     </mat-list-item>
   </mat-list>
 </main>
