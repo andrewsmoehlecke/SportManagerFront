@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import { TimesComponent } from './times/times.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TimesComponent } from './times/times.component';
     TimesComponent,
   ],
   imports: [
+    MatListModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
