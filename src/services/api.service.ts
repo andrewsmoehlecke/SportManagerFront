@@ -125,9 +125,10 @@ export class ApiService {
       'Accept': 'application/json'
     });
 
-    return this.http.put<UsuarioDto>(this.getURL(["time/" + time.idTime]), JSON.stringify(time), { headers: headers })
+    return this.http.put<TimeDto>(this.getURL(["time/" + time.idTime]), JSON.stringify(time), { headers: headers })
       .pipe(
         map((data) => {
+          console.debug(data)
           return data;
         }),
         catchError((err: HttpErrorResponse) => {
