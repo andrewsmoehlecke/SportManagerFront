@@ -50,9 +50,20 @@
 </header>
 
 <main>
+<<<<<<< HEAD
 </main>
 
 <footer>
   <h1><img class="footer-imagem" src="../../assets/img/logo.png"></h1>
   <h3 class="footer-copyright">2021 &copy; Remor Technologies. Todos os direitos reservados.</h3>
 </footer>
+=======
+  <mat-list>
+    <mat-list-item *ngFor="let time of allTimes" (click)="editTime(time.idTime)">
+      <div mat-line>Time {{time.nomeTime}}</div>
+      <div mat-line>Vitórias {{time.numVitoria}}</div>
+      <div mat-line>Derrotas {{time.numDerrota}}</div>
+    </mat-list-item>
+  </mat-list>
+</main>
+>>>>>>> 1c2971c1b542f36a2570c7c81d439584220474e7
