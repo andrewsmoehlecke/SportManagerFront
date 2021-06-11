@@ -118,4 +118,21 @@ export class ApiService {
         })
       );
   }
+
+  updateTime(time: TimeDto) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.put<UsuarioDto>(this.getURL(["time/" + time.idTime]), JSON.stringify(time), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
 }

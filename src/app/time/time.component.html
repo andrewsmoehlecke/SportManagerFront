@@ -28,8 +28,12 @@
         <div class="input">
                 <label for="dataCriacao">Data de Criação</label>
                 <input *ngIf="formTime.value.dataCriacao == undefined" type="text" formControlName="dataCriacao"
-                        [matDatepicker]="picker">
+                        [matDatepicker]="picker" disabled>
                 <input *ngIf="formTime.value.dataCriacao != undefined" type="text" formControlName="dataCriacao"
-                        [value]="formTime.value.dataCriacao" [matDatepicker]="picker">
+                        [value]="formTime.value.dataCriacao" [matDatepicker]="picker" disabled>
+        </div>
+
+        <div class="button">
+                <button (click)="updateTime()">Salvar</button>
         </div>
 </form>

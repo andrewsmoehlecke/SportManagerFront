@@ -51,7 +51,7 @@
 
 <main>
   <mat-list>
-    <mat-list-item *ngFor="let time of allTimes">
+    <mat-list-item *ngFor="let time of allTimes" (click)="editTime(time.idTime)">
       <div mat-line>Time {{time.nomeTime}}</div>
       <div mat-line>Vitórias {{time.numVitoria}}</div>
       <div mat-line>Derrotas {{time.numDerrota}}</div>
