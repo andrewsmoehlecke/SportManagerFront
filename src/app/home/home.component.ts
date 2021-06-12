@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     private usuarioLogado: UsuarioLogado,
   ) {
     this.initForm();
-    this.usuario = this.usuarioLogado.getUsuarioLogado();
+    this.usuarioLogado.getTestUser();
+    // this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   public initForm(): void {
