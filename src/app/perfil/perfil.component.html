@@ -52,28 +52,28 @@
 <main>
   <div class="form">
     <form [formGroup]="formUsuario" class="form-group">
-      <h2 class="h2-info">Configurações de <a class="nome-time">{{formUsuario.value.nomeTime}}</a></h2>
+      <h2 class="h2-info">Configurações de <a class="nome-usuario">{{formUsuario.value.username}}</a></h2>
 
       <div class="div-infos">
-        <label for="nomeTime" class="label-info">Username</label>
+        <label for="username" class="label-info">Username</label>
         <input class="input-info" *ngIf="formUsuario.value.username == undefined" type="text" formControlName="username">
         <input class="input-info" *ngIf="formUsuario.value.username != undefined" type="text" formControlName="username"
                 [value]="formUsuario.value.username">
       </div>
       <div class="div-infos">
-        <label for="nomeTime" class="label-info">Email</label>
+        <label for="email" class="label-info">Email</label>
         <input class="input-info" *ngIf="formUsuario.value.email == undefined" type="text" formControlName="email">
         <input class="input-info" *ngIf="formUsuario.value.email != undefined" type="text" formControlName="email"
                 [value]="formUsuario.value.email">
       </div>
       <div class="div-infos">
-        <label for="nomeTime" class="label-info">Senha</label>
+        <label for="senha" class="label-info">Senha</label>
         <input class="input-info" *ngIf="formUsuario.value.senha == undefined" type="password" formControlName="senha">
         <input class="input-info" *ngIf="formUsuario.value.senha != undefined" type="password" formControlName="senha"
                 [value]="formUsuario.value.senha">
       </div>
       <div class="div-infos">
-        <label for="numDerrota" class="label-info">URL Foto de Perfil</label>
+        <label for="fotoPerfil" class="label-info">URL Foto de Perfil</label>
         <input class="input-info" *ngIf="formUsuario.value.fotoPerfil == undefined" type="url" formControlName="fotoPerfil">
         <input class="input-info" *ngIf="formUsuario.value.fotoPerfil != undefined" type="url" formControlName="fotoPerfil"
                 [value]="formTime.value.fotoPerfil">
