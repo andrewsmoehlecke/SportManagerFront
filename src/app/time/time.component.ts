@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/services/api.service';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -21,6 +21,7 @@ export class TimeComponent implements OnInit {
     private api: ApiService,
     private usuarioLogado: UsuarioLogado,
     private route: ActivatedRoute,
+    private router: Router,
   ) {
     this.initForm();
     this.usuario = this.usuarioLogado.getUsuarioLogado();
@@ -80,6 +81,30 @@ export class TimeComponent implements OnInit {
           position: 'center',
           icon: 'error',
           title: 'Não foi possível atualizar o time! :(',
+          timer: 2500,
+          showConfirmButton: false
+        });
+        console.error("Algo de errado não está certo " + err);
+      });
+  }
+
+  deleteTime(idTime: Number) {
+    this.api.deleteTimeById(idTime).subscribe((data) => {
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Time deletado',
+        timer: 2200,
+        showConfirmButton: false
+      });
+
+      this.router.navigate(['/times']);
+    },
+      (err) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Não foi possível deletar o time! :(',
           timer: 2500,
           showConfirmButton: false
         });

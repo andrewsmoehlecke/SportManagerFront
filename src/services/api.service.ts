@@ -136,4 +136,21 @@ export class ApiService {
         })
       );
   }
+
+  deleteTimeById(id: Number): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete<any>(this.getURL(["time/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
 }
