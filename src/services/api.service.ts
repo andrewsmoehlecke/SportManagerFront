@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
+import { TimeJogoDto } from 'src/model/TimeJogoDto';
 
 @Injectable({
   providedIn: 'root'
@@ -178,6 +179,40 @@ export class ApiService {
     });
 
     return this.http.delete<any>(this.getURL(["usuario/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getAllTimeJogos(): Observable<TimeJogoDto[]> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<TimeJogoDto[]>(this.getURL(["time_jogo"]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getTimeJogoById(id: Number): Observable<TimeJogoDto> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<TimeJogoDto>(this.getURL(["time_jogo/" + id]), { headers: headers })
       .pipe(
         map((data) => {
           return data;

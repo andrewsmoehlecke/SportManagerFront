@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { PerfilComponent } from './perfil/perfil.component';
 import { JogosComponent } from './jogos/jogos.component';
 import { JogoComponent } from './jogo/jogo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { JogoComponent } from './jogo/jogo.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     UsuarioLogado,

@@ -4,6 +4,6 @@ export interface TimeJogoDto {
     pontuacaoTime1: Number;
     pontuacaoTime2: Number;
     dataJogo: Date;
-    idTime: Number;
-    idJogo: Number;
+    idTime1: Number;
+    idTime2: Number;
 }
