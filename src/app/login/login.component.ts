@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
   logar() {
     this.api.logarUsuario(this.formLogin.value).subscribe((data) => {
       this.usuarioLogado.saveUsuarioLogado(data);
-      console.debug("Usuario Logado");
       this.router.navigate(['/home']);
     },
       (err) => {
