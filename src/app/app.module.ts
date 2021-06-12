@@ -13,6 +13,8 @@ import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import { TimesComponent } from './times/times.component';
 import { MatListModule } from '@angular/material/list';
 import { PerfilComponent } from './perfil/perfil.component';
+import { JogosComponent } from './jogos/jogos.component';
+import { JogoComponent } from './jogo/jogo.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     HomeComponent,
     TimesComponent,
     PerfilComponent,
+    JogosComponent,
+    JogoComponent,
   ],
   imports: [
     MatListModule,
