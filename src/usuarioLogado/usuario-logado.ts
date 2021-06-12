@@ -1,4 +1,4 @@
-import { UsuarioDto } from "src/model/UsuarioDto";
+import { UsuarioDto } from './../model/UsuarioDto';
 
 export class UsuarioLogado {
 

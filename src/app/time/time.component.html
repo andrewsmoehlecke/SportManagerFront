@@ -52,7 +52,7 @@
 <main>
   <div class="form">
     <form [formGroup]="formTime" class="form-group">
-      <h2 class="h2-info">Configurações do Time {{formTime.value.nomeTime}}</h2>
+      <h2 class="h2-info">Configurações de <a class="nome-time">{{formTime.value.nomeTime}}</a></h2>
 
       <div class="div-infos">
         <label for="nomeTime" class="label-info">Nome do Time</label>
@@ -78,15 +78,9 @@
         <input class="input-info" *ngIf="formTime.value.numDerrota != undefined" type="text" formControlName="numDerrota"
                 [value]="formTime.value.numDerrota">
       </div>
-      <div class="div-infos">
-        <label for="dataCriacao" class="label-info">Data de Criação</label>
-        <input class="input-info" *ngIf="formTime.value.dataCriacao == undefined" type="text" formControlName="dataCriacao"
-                [matDatepicker]="picker" disabled>
-        <input class="input-info" *ngIf="formTime.value.dataCriacao != undefined" type="text" formControlName="dataCriacao"
-                [value]="formTime.value.dataCriacao" [matDatepicker]="picker" disabled>
-      </div>
       <div class="button-info-div">
-        <button  class="button-info" (click)="updateTime()">Salvar</button>
+        <button  class="button-info-save" (click)="updateTime()">Salvar</button>
+        <button  class="button-info-delete" (click)="deleteTime(formTime.value.idTIme)">Deletar</button>
       </div>
     </form>
   </div>
