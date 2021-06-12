@@ -56,27 +56,29 @@
 
       <div class="div-infos">
         <label for="username" class="label-info">Username</label>
-        <input class="input-info" *ngIf="formUsuario.value.username == undefined" type="text" formControlName="username">
+        <input class="input-info" *ngIf="formUsuario.value.username == undefined" type="text"
+          formControlName="username">
         <input class="input-info" *ngIf="formUsuario.value.username != undefined" type="text" formControlName="username"
-                [value]="formUsuario.value.username">
+          [value]="formUsuario.value.username">
       </div>
       <div class="div-infos">
         <label for="email" class="label-info">Email</label>
         <input class="input-info" *ngIf="formUsuario.value.email == undefined" type="text" formControlName="email">
         <input class="input-info" *ngIf="formUsuario.value.email != undefined" type="text" formControlName="email"
-                [value]="formUsuario.value.email">
+          [value]="formUsuario.value.email">
       </div>
       <div class="div-infos">
         <label for="senha" class="label-info">Senha</label>
         <input class="input-info" *ngIf="formUsuario.value.senha == undefined" type="password" formControlName="senha">
         <input class="input-info" *ngIf="formUsuario.value.senha != undefined" type="password" formControlName="senha"
-                [value]="formUsuario.value.senha">
+          [value]="formUsuario.value.senha">
       </div>
       <div class="div-infos">
         <label for="fotoPerfil" class="label-info">URL Foto de Perfil</label>
-        <input class="input-info" *ngIf="formUsuario.value.fotoPerfil == undefined" type="url" formControlName="fotoPerfil">
-        <input class="input-info" *ngIf="formUsuario.value.fotoPerfil != undefined" type="url" formControlName="fotoPerfil"
-                [value]="formTime.value.fotoPerfil">
+        <input class="input-info" *ngIf="formUsuario.value.fotoPerfil == undefined" type="url"
+          formControlName="fotoPerfil">
+        <input class="input-info" *ngIf="formUsuario.value.fotoPerfil != undefined" type="url"
+          formControlName="fotoPerfil" [value]="formUsuario.value.fotoPerfil">
       </div>
       <div class="button-info-div">
         <button class="button-info-save" (click)="updateUsuario()">Salvar</button>
