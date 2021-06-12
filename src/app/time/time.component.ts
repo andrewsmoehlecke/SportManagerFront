@@ -75,6 +75,14 @@ export class TimeComponent implements OnInit {
         numDerrota: data.numDerrota,
         dataCriacao: data.dataCriacao,
       });
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Time atualizado!',
+        timer: 2500,
+        showConfirmButton: false
+      });
     },
       (err) => {
         Swal.fire({
