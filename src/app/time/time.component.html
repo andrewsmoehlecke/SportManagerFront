@@ -1,39 +1,98 @@
-<form [formGroup]="formTime">
-        <h2>Configurações do Time {{formTime.value.nomeTime}}</h2>
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <h1 class="nav-imagem-h1"><button class="nav-button-img"><img class="nav-imagem"
+              src="../../assets/img/logo.png"></button></h1>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/home">
+          <p class="nav-paragrafo">Home</p>
+          <img class="nav-imgs" src="../../assets/img/home.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button">
+          <p class="nav-paragrafo">Times</p>
+          <img class="nav-imgs" src="../../assets/img/times.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button">
+          <p class="nav-paragrafo">Campeonatos</p>
+          <img class="nav-imgs" src="../../assets/img/campeonatos.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button id="last-nav-button" class="nav-button">
+          <p class="nav-paragrafo">Jogos</p>
+          <img class="nav-imgs" src="../../assets/img/jogos.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <div class="usuario-logado">
+          <button class="usuario-button">
+            <div class="usuario-nome-div">
+              <h2 class="usuario-nome">{{usuario.username}}</h2>
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
+              <img class="usuario-img"
+                src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
+              <img class="usuario-img" src="{{usuario.fotoPerfil}}">
+            </div>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-        <div class="input">
-                <label for="nomeTime">Nome do Time</label>
-                <input *ngIf="formTime.value.nomeTime == undefined" type="text" formControlName="nomeTime">
-                <input *ngIf="formTime.value.nomeTime != undefined" type="text" formControlName="nomeTime"
-                        [value]="formTime.value.nomeTime">
-        </div>
-        <div class="input">
-                <label for="numVitoria">Número de Vitórias</label>
-                <input *ngIf="formTime.value.numVitoria == undefined" type="text" formControlName="numVitoria">
-                <input *ngIf="formTime.value.numVitoria != undefined" type="text" formControlName="numVitoria"
-                        [value]="formTime.value.numVitoria">
-        </div>
-        <div class="input">
-                <label for="numEmpate">Número de Empates</label>
-                <input *ngIf="formTime.value.numEmpate == undefined" type="text" formControlName="numEmpate">
-                <input *ngIf="formTime.value.numEmpate != undefined" type="text" formControlName="numEmpate"
-                        [value]="formTime.value.numEmpate">
-        </div>
-        <div class="input">
-                <label for="numDerrota">Número de Derrota</label>
-                <input *ngIf="formTime.value.numDerrota == undefined" type="text" formControlName="numDerrota">
-                <input *ngIf="formTime.value.numDerrota != undefined" type="text" formControlName="numDerrota"
-                        [value]="formTime.value.numDerrota">
-        </div>
-        <div class="input">
-                <label for="dataCriacao">Data de Criação</label>
-                <input *ngIf="formTime.value.dataCriacao == undefined" type="text" formControlName="dataCriacao"
-                        [matDatepicker]="picker" disabled>
-                <input *ngIf="formTime.value.dataCriacao != undefined" type="text" formControlName="dataCriacao"
-                        [value]="formTime.value.dataCriacao" [matDatepicker]="picker" disabled>
-        </div>
+<main>
+  <div class="form">
+    <form [formGroup]="formTime" class="form-group">
+      <h2 class="h2-info">Configurações do Time {{formTime.value.nomeTime}}</h2>
 
-        <div class="button">
-                <button (click)="updateTime()">Salvar</button>
-        </div>
-</form>
+      <div class="div-infos">
+        <label for="nomeTime" class="label-info">Nome do Time</label>
+        <input class="input-info" *ngIf="formTime.value.nomeTime == undefined" type="text" formControlName="nomeTime">
+        <input class="input-info" *ngIf="formTime.value.nomeTime != undefined" type="text" formControlName="nomeTime"
+                [value]="formTime.value.nomeTime">
+      </div>
+      <div class="div-infos">
+        <label for="numVitoria" class="label-info">Número de Vitórias</label>
+        <input class="input-info" *ngIf="formTime.value.numVitoria == undefined" type="text" formControlName="numVitoria">
+        <input class="input-info" *ngIf="formTime.value.numVitoria != undefined" type="text" formControlName="numVitoria"
+                [value]="formTime.value.numVitoria">
+      </div>
+      <div class="div-infos">
+        <label for="numEmpate" class="label-info">Número de Empates</label>
+        <input class="input-info" *ngIf="formTime.value.numEmpate == undefined" type="text" formControlName="numEmpate">
+        <input class="input-info" *ngIf="formTime.value.numEmpate != undefined" type="text" formControlName="numEmpate"
+                [value]="formTime.value.numEmpate">
+      </div>
+      <div class="div-infos">
+        <label for="numDerrota" class="label-info">Número de Derrota</label>
+        <input class="input-info" *ngIf="formTime.value.numDerrota == undefined" type="text" formControlName="numDerrota">
+        <input class="input-info" *ngIf="formTime.value.numDerrota != undefined" type="text" formControlName="numDerrota"
+                [value]="formTime.value.numDerrota">
+      </div>
+      <div class="div-infos">
+        <label for="dataCriacao" class="label-info">Data de Criação</label>
+        <input class="input-info" *ngIf="formTime.value.dataCriacao == undefined" type="text" formControlName="dataCriacao"
+                [matDatepicker]="picker" disabled>
+        <input class="input-info" *ngIf="formTime.value.dataCriacao != undefined" type="text" formControlName="dataCriacao"
+                [value]="formTime.value.dataCriacao" [matDatepicker]="picker" disabled>
+      </div>
+      <div class="button-info-div">
+        <button  class="button-info" (click)="updateTime()">Salvar</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <h1><img class="footer-imagem" src="../../assets/img/logo.png"></h1>
+  <h3 class="footer-copyright">2021 &copy; Remor Technologies. Todos os direitos reservados.</h3>
+</footer>

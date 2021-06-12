@@ -145,6 +145,7 @@ main {
     display: block;
     font-size: 30px;
     color: #e2e2e2;
+    margin: 0;
   }
 }
 
@@ -154,9 +155,8 @@ main {
 
 footer {
   background-color: #2a2a2a;
-  padding: 50px;
   text-align: center;
-  border-top: 3px solid #191919;
+  padding: 50px;
 
   .footer-imagem {
     width: 200px;

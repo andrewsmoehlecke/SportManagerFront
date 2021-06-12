@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class TimeComponent implements OnInit {
 
   public formTime: FormGroup;
-  private usuario: UsuarioDto;
+  public usuario: UsuarioDto;
 
   constructor(
     private formBuilder: FormBuilder,
