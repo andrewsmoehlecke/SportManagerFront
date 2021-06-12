@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import { TimesComponent } from './times/times.component';
 import { MatListModule } from '@angular/material/list';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
     CadastroComponent,
     HomeComponent,
     TimesComponent,
+    PerfilComponent,
   ],
   imports: [
     MatListModule,
