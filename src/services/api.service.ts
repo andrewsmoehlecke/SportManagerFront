@@ -153,4 +153,38 @@ export class ApiService {
         })
       );
   }
+
+  updateUsuario(usuario: UsuarioDto) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.put<UsuarioDto>(this.getURL(["usuario/" + usuario.idUsuario]), JSON.stringify(usuario), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  deleteUsuarioById(id: Number): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete<any>(this.getURL(["usuario/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
 }
