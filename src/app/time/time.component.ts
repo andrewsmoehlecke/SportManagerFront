@@ -24,8 +24,7 @@ export class TimeComponent implements OnInit {
     private router: Router,
   ) {
     this.initForm();
-    this.usuarioLogado.getTestUser();
-    // this.usuario = this.usuarioLogado.getUsuarioLogado();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   public initForm(): void {

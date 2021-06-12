@@ -20,8 +20,7 @@ export class TimesComponent implements OnInit {
     private api: ApiService,
     private router: Router,
   ) {
-    // this.usuario = this.usuarioLogado.getUsuarioLogado();
-    this.usuarioLogado.getTestUser();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   ngOnInit(): void {
