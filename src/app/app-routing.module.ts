@@ -1,3 +1,5 @@
+import { JogosComponent } from './jogos/jogos.component';
+import { JogoComponent } from './jogo/jogo.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TimesComponent } from './times/times.component';
 import { HomeComponent } from './home/home.component';
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent
+  },
+  {
+    path: 'jogo',
+    component: JogoComponent
+  },
+  {
+    path: 'jogos',
+    component: JogosComponent
   },
   {
     path: '**',

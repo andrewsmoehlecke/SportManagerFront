@@ -12,19 +12,13 @@
         </button>
       </li>
       <li class="nav-item">
-        <button class="nav-button">
+        <button class="nav-button" routerLink="/times">
           <p class="nav-paragrafo">Times</p>
           <img class="nav-imgs" src="../../assets/img/times.png">
         </button>
       </li>
       <li class="nav-item">
-        <button class="nav-button">
-          <p class="nav-paragrafo">Campeonatos</p>
-          <img class="nav-imgs" src="../../assets/img/campeonatos.png">
-        </button>
-      </li>
-      <li class="nav-item">
-        <button id="last-nav-button" class="nav-button">
+        <button class="nav-button" routerLink="/jogos">
           <p class="nav-paragrafo">Jogos</p>
           <img class="nav-imgs" src="../../assets/img/jogos.png">
         </button>
@@ -35,11 +29,11 @@
             <div class="usuario-nome-div">
               <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
               <img class="usuario-img"
                 src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
               <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
