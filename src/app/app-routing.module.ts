@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { TimesComponent } from './times/times.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'times',
     component: TimesComponent
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent
   },
   {
     path: '**',

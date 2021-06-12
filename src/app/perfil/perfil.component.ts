@@ -93,4 +93,8 @@ export class PerfilComponent implements OnInit {
         console.error("Algo de errado não está certo " + err);
       });
   }
+
+  returnTimes() {
+    this.router.navigate(['/times']);
+  }
 }
