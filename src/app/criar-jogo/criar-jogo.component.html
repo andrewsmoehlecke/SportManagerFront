@@ -1,13 +1,46 @@
 <!-- Para selecionar os time do jogo -->
 
-<!-- <div class="div-infos">
-    <label for="time1.nomeTime" class="label-info">Time {{formJogo.value.time1.nomeTime}}</label>
-    <mat-form-field appearance="fill">
-        <mat-label>Selecione o Time</mat-label>
-        <mat-select>
-            <mat-option *ngFor="let time of allTimes" [value]="formJogo.value.time1">
-                {{time.nomeTime}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-</div> -->
+
+
+<div class="form">
+    <form [formGroup]="formCriarJogo" class="form-group">
+        <div class="div-infos">
+            <label for="local" class="label-info">Local</label>
+            <input class="input-info" type="text" formControlName="local">
+        </div>
+        <div class="div-infos">
+            <label for="dataJogo" class="label-info">Data e Hora</label>
+            <input class="input-info" type="datetime" formControlName="dataJogo" placeholder="yyyy-MM-dd hh:mm:ss">
+        </div>
+        <div class="div-infos">
+            <label for="titulo" class="label-info">Título</label>
+            <input class="input-info" type="text" formControlName="titulo">
+        </div>
+        <div class="div-infos">
+            <label for="time1" class="label-info">Time 1</label>
+            <mat-form-field appearance="fill">
+                <mat-label>Selecione o Time</mat-label>
+                <mat-select formControlName="time1">
+                    <mat-option *ngFor="let time of allTimes" [value]="time">
+                        {{time.nomeTime}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="div-infos">
+            <label for="time2" class="label-info">Time 2</label>
+            <mat-form-field appearance="fill">
+                <mat-label>Selecione o Time</mat-label>
+                <mat-select formControlName="time2">
+                    <mat-option *ngFor="let time of allTimes" [value]="time">
+                        {{time.nomeTime}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="button-info-div">
+            <button (click)="criarJogo()">Criar</button>
+        </div>
+    </form>
+</div>
