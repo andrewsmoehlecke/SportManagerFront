@@ -8,15 +8,16 @@ import { LoginComponent } from './login/login.component';
 import { TimeComponent } from './time/time.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CriarJogoComponent } from './criar-jogo/criar-jogo.component';
 
 const routes: Routes = [
   {
     path: 'time',
-    component:TimeComponent
+    component: TimeComponent
   },
   {
     path: 'login',
-    component:LoginComponent
+    component: LoginComponent
   },
   {
     path: 'cadastro',
@@ -43,9 +44,13 @@ const routes: Routes = [
     component: JogosComponent
   },
   {
+    path: 'criar-jogo',
+    component: CriarJogoComponent,
+  },
+  {
     path: '**',
     redirectTo: '/login',
-    pathMatch:'full'
+    pathMatch: 'full'
   }
 ];
 
