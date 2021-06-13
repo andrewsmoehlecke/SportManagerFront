@@ -58,6 +58,7 @@ export class JogoComponent implements OnInit {
       });
   }
 
+
   public initForm(): void {
     this.formJogo = this.formBuilder.group({
       idTimeJogo: [''],

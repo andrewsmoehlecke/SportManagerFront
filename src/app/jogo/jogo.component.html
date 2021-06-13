@@ -46,12 +46,8 @@
 <main>
   <div class="form">
     <form [formGroup]="formJogo" class="form-group">
-      <div class="div-infos">
-        <label for="titulo" class="label-info">Título</label>
-        <input class="input-info" *ngIf="formJogo.value.tiulo == undefined" type="text" formControlName="titulo">
-        <input class="input-info" *ngIf="formJogo.value.titulo != undefined" type="text" formControlName="titulo"
-          [value]="formJogo.value.titulo">
-      </div>
+      <h2 class="h2-info"><a class="nome-time">{{formJogo.value.time1.nomeTime}}</a> vs <a class="nome-time">{{formJogo.value.time2.nomeTime}}</a></h2>
+
       <div class="div-infos">
         <label for="pontuacaoTime1" class="label-info">Pontuação {{formJogo.value.time1.nomeTime}}</label>
         <input class="input-info" *ngIf="formJogo.value.pontuacaoTime1 == undefined" type="text"
@@ -75,10 +71,9 @@
       </div>
       <div class="div-infos">
         <label for="dataJogo" class="label-info">Data e Hora</label>
-        <input class="input-info" *ngIf="formJogo.value.dataJogo == undefined" type="text" formControlName="dataJogo"
-          disabled>
+        <input class="input-info" *ngIf="formJogo.value.dataJogo == undefined" type="text" formControlName="dataJogo">
         <input class="input-info" *ngIf="formJogo.value.dataJogo != undefined" type="text" formControlName="dataJogo"
-          [value]="formJogo.value.dataJogo" disabled>
+          [value]="formJogo.value.dataJogo">
       </div>
       <div class="div-infos">
         <label for="local" class="label-info">Local</label>
@@ -87,7 +82,8 @@
           [value]="formJogo.value.local">
       </div>
       <div class="button-info-div">
-
+        <button class="button-info-save"> <!-- (click)="updateTime()" -->Salvar</button>
+        <button class="button-info-delete"> <!-- (click)="deleteTime(formJogo.value.idJogo)" -->Deletar</button>
       </div>
     </form>
   </div>

@@ -44,13 +44,12 @@
 </header>
 
 <main>
-  <mat-list>
-    <mat-list-item *ngFor="let timeJogo of listTimeJogo" (click)="editTimeJogo(timeJogo.idTimeJogo)">
-      <div mat-line>{{timeJogo.titulo}}</div>
-      <div mat-line>Time 1 {{timeJogo.time1.nomeTime}}</div>
-      <div mat-line>Time 2 {{timeJogo.time2.nomeTime}}</div>
-      <div mat-line>Data {{timeJogo.dataJogo}}</div>
-      <div mat-line>Local {{timeJogo.local}}</div>
+  <mat-list class="lista-jogos">
+    <mat-list-item class="item-jogos" *ngFor="let timeJogo of listTimeJogo">
+      <div mat-line class="time-jogos">{{timeJogo.time1.nomeTime}} <img class="img-jogos" src="../../assets/img/versus.png"> {{timeJogo.time2.nomeTime}}</div>
+      <div mat-line class="info-jogos">{{timeJogo.dataJogo}}</div>
+      <div mat-line class="info-jogos">{{timeJogo.local}}</div>
+      <div mat-line><button class="button-jogos" (click)="editTimeJogo(timeJogo.idTimeJogo)">Editar</button></div>
     </mat-list-item>
   </mat-list>
 </main>

@@ -135,6 +135,63 @@ header {
   }
 }
 
+/* --------------------------------- MAIN --------------------------------- */
+/* --------------------------------- MAIN --------------------------------- */
+/* --------------------------------- MAIN --------------------------------- */
+
+main {
+  .lista-jogos {
+    padding: 0px;
+    margin: 75px auto;
+    max-width: 40%;
+
+    .item-jogos {
+      border: 5px solid #191919;
+      background-color: #2a2a2a;
+      border-radius: 20px;
+      color: #ffffff;
+      margin: 15px 0;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .time-jogos {
+      padding: 5px;
+      font-size: 40px;
+      margin-bottom: 60px;
+
+      .img-jogos {
+        vertical-align: middle;
+        width: 30px;
+        margin: 0 20px;
+      }
+    }
+
+    .info-jogos {
+      font-size: 12px;
+    }
+
+    .imagem-jogos {
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .button-jogos {
+      font-size: 20px;
+      border: 3px solid #191919;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 10px;
+      margin-top: 15px;
+    }
+
+    .button-jogos:hover {
+      cursor: pointer;
+      background-color: #aaaaaa;
+    }
+  }
+}
+
 /* --------------------------------- FOOTER --------------------------------- */
 /* --------------------------------- FOOTER --------------------------------- */
 /* --------------------------------- FOOTER --------------------------------- */
