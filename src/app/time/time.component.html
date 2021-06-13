@@ -29,11 +29,11 @@
             <div class="usuario-nome-div">
               <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
               <img class="usuario-img"
                 src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
               <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
@@ -52,25 +52,28 @@
         <label for="nomeTime" class="label-info">Nome do Time</label>
         <input class="input-info" *ngIf="formTime.value.nomeTime == undefined" type="text" formControlName="nomeTime">
         <input class="input-info" *ngIf="formTime.value.nomeTime != undefined" type="text" formControlName="nomeTime"
-                [value]="formTime.value.nomeTime">
+          [value]="formTime.value.nomeTime">
       </div>
       <div class="div-infos">
         <label for="numVitoria" class="label-info">Número de Vitórias</label>
-        <input class="input-info" *ngIf="formTime.value.numVitoria == undefined" type="number" formControlName="numVitoria">
-        <input class="input-info" *ngIf="formTime.value.numVitoria != undefined" type="number" formControlName="numVitoria"
-                [value]="formTime.value.numVitoria">
+        <input class="input-info" *ngIf="formTime.value.numVitoria == undefined" type="number"
+          formControlName="numVitoria">
+        <input class="input-info" *ngIf="formTime.value.numVitoria != undefined" type="number"
+          formControlName="numVitoria" [value]="formTime.value.numVitoria">
       </div>
       <div class="div-infos">
         <label for="numEmpate" class="label-info">Número de Empates</label>
-        <input class="input-info" *ngIf="formTime.value.numEmpate == undefined" type="number" formControlName="numEmpate">
-        <input class="input-info" *ngIf="formTime.value.numEmpate != undefined" type="number" formControlName="numEmpate"
-                [value]="formTime.value.numEmpate">
+        <input class="input-info" *ngIf="formTime.value.numEmpate == undefined" type="number"
+          formControlName="numEmpate">
+        <input class="input-info" *ngIf="formTime.value.numEmpate != undefined" type="number"
+          formControlName="numEmpate" [value]="formTime.value.numEmpate">
       </div>
       <div class="div-infos">
         <label for="numDerrota" class="label-info">Número de Derrota</label>
-        <input class="input-info" *ngIf="formTime.value.numDerrota == undefined" type="number" formControlName="numDerrota">
-        <input class="input-info" *ngIf="formTime.value.numDerrota != undefined" type="number" formControlName="numDerrota"
-                [value]="formTime.value.numDerrota">
+        <input class="input-info" *ngIf="formTime.value.numDerrota == undefined" type="number"
+          formControlName="numDerrota">
+        <input class="input-info" *ngIf="formTime.value.numDerrota != undefined" type="number"
+          formControlName="numDerrota" [value]="formTime.value.numDerrota">
       </div>
       <div class="button-info-div">
         <button class="button-info-save" (click)="updateTime()">Salvar</button>
