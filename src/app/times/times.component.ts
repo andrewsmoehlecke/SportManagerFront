@@ -25,7 +25,7 @@ export class TimesComponent implements OnInit {
 
   ngOnInit(): void {
     this.api.getAllTimes().subscribe((data) => {
-      this.allTimes = data;
+      console.log(this.allTimes = data);
     },
       (err) => {
         console.error("Algo de errado não está certo " + err);

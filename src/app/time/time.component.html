@@ -29,11 +29,11 @@
             <div class="usuario-nome-div">
               <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
               <img class="usuario-img"
                 src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
               <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
@@ -74,6 +74,13 @@
           formControlName="numDerrota">
         <input class="input-info" *ngIf="formTime.value.numDerrota != undefined" type="number"
           formControlName="numDerrota" [value]="formTime.value.numDerrota">
+      </div>
+      <div class="div-infos">
+        <label for="fotoPerfil" class="label-info">URL Foto do Time</label>
+        <input class="input-info" *ngIf="formTime.value.fotoPerfil == undefined" type="url"
+          formControlName="fotoPerfil">
+        <input class="input-info" *ngIf="formTime.value.fotoPerfil != undefined" type="url"
+          formControlName="fotoPerfil" [value]="formTime.value.fotoPerfil">
       </div>
       <div class="button-info-div">
         <button class="button-info-save" (click)="updateTime()">Salvar</button>

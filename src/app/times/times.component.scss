@@ -140,19 +140,44 @@ header {
 /* --------------------------------- MAIN --------------------------------- */
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   .lista-times {
+    padding: 0px;
+    margin: 75px auto;
+    max-width: 25%;
+
     .item-times {
-      position: relative;
       display: block;
       border: 5px solid #191919;
       background-color: #2a2a2a;
-      width: 50%;
-      padding: 70px;
-      border-radius: 10px;
+      border-radius: 20px;
       color: #ffffff;
+      margin: 15px 0;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .nome-times {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .imagem-times {
+      height: 100px;
+      border-radius: 50%;
+    }
+
+    .button-times {
+      font-size: 20px;
+      border: 3px solid #191919;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 10px;
+      margin-top: 15px;
+    }
+
+    .button-times:hover {
+      cursor: pointer;
+      background-color: #aaaaaa;
     }
   }
 }

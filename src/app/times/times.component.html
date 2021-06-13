@@ -29,11 +29,11 @@
             <div class="usuario-nome-div">
               <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
               <img class="usuario-img"
                 src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
               <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
@@ -46,11 +46,11 @@
 <main>
   <mat-list class="lista-times">
     <mat-list-item class="item-times" *ngFor="let time of allTimes">
-      <div mat-line class="linha-times">{{time.nomeTime}}</div>
-      <div mat-line class="linha-times"><span>Vitórias:</span> {{time.numVitoria}}</div>
-      <div mat-line class="linha-times"><span>Empates:</span> {{time.numEmpate}}</div>
-      <div mat-line class="linha-times"><span>Derrotas:</span> {{time.numDerrota}}</div>
-      <div mat-line><button (click)="editTime(time.idTime)">Editar</button></div>
+      <div mat-line class="nome-times">{{time.nomeTime}}</div>
+      <div mat-line *ngIf="time.fotoTime != ''"><img class="imagem-times" src="{{time.fotoTime}}"></div>
+      <div mat-line *ngIf="time.fotoTime == ''"><img class="imagem-times"
+        src="https://cdn.discordapp.com/attachments/819908961050296360/853603901265281074/unknown.png"></div>
+      <div mat-line><button class="button-times" (click)="editTime(time.idTime)">Editar</button></div>
     </mat-list-item>
   </mat-list>
 </main>
