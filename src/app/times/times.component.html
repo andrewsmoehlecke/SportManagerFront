@@ -44,11 +44,13 @@
 </header>
 
 <main>
-  <mat-list>
-    <mat-list-item *ngFor="let time of allTimes" (click)="editTime(time.idTime)">
-      <div mat-line>Time {{time.nomeTime}}</div>
-      <div mat-line>Vitórias {{time.numVitoria}}</div>
-      <div mat-line>Derrotas {{time.numDerrota}}</div>
+  <mat-list class="lista-times">
+    <mat-list-item class="item-times" *ngFor="let time of allTimes">
+      <div mat-line class="linha-times">{{time.nomeTime}}</div>
+      <div mat-line class="linha-times"><span>Vitórias:</span> {{time.numVitoria}}</div>
+      <div mat-line class="linha-times"><span>Empates:</span> {{time.numEmpate}}</div>
+      <div mat-line class="linha-times"><span>Derrotas:</span> {{time.numDerrota}}</div>
+      <div mat-line><button (click)="editTime(time.idTime)">Editar</button></div>
     </mat-list-item>
   </mat-list>
 </main>
