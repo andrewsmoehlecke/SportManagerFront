@@ -1,10 +1,12 @@
+import { TimeDto } from "./TimeDto";
+
 export interface TimeJogoDto {
     idTimeJogo: Number;
     local: String;
     pontuacaoTime1: Number;
     pontuacaoTime2: Number;
     dataJogo: Date;
-    idTime1: Number;
-    idTime2: Number;
+    time1: TimeDto;
+    time2: TimeDto;
     titulo: String;
 }

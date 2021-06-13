@@ -44,22 +44,53 @@
 </header>
 
 <main>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
+  <div class="form">
+    <form [formGroup]="formJogo" class="form-group">
+      <div class="div-infos">
+        <label for="titulo" class="label-info">Título</label>
+        <input class="input-info" *ngIf="formJogo.value.tiulo == undefined" type="text" formControlName="titulo">
+        <input class="input-info" *ngIf="formJogo.value.titulo != undefined" type="text" formControlName="titulo"
+          [value]="formJogo.value.titulo">
+      </div>
+      <div class="div-infos">
+        <label for="pontuacaoTime1" class="label-info">Pontuação {{formJogo.value.time1.nomeTime}}</label>
+        <input class="input-info" *ngIf="formJogo.value.pontuacaoTime1 == undefined" type="text"
+          formControlName="pontuacaoTime1">
+        <input class="input-info" *ngIf="formJogo.value.pontuacaoTime1 != undefined" type="text"
+          formControlName="pontuacaoTime1" [value]="formJogo.value.pontuacaoTime1">
+      </div>
+      <div class="div-infos">
+        <label for="time2.nomeTime" class="label-info">Time {{formJogo.value.time2.nomeTime}}</label>
+        <input class="input-info" *ngIf="formJogo.value.time2.nomeTime == undefined" type="text"
+          formControlName="nomeTime">
+        <input class="input-info" *ngIf="formJogo.value.time1.nomeTime != undefined" type="text"
+          formControlName="nomeTime" [value]="formJogo.value.time2.nomeTime">
+      </div>
+      <div class="div-infos">
+        <label for="pontuacaoTime2" class="label-info">Pontuação {{formJogo.value.time2.nomeTime}}</label>
+        <input class="input-info" *ngIf="formJogo.value.pontuacaoTime2 == undefined" type="text"
+          formControlName="pontuacaoTime2">
+        <input class="input-info" *ngIf="formJogo.value.pontuacaoTime2 != undefined" type="text"
+          formControlName="pontuacaoTime2" [value]="formJogo.value.pontuacaoTime2">
+      </div>
+      <div class="div-infos">
+        <label for="dataJogo" class="label-info">Data e Hora</label>
+        <input class="input-info" *ngIf="formJogo.value.dataJogo == undefined" type="text" formControlName="dataJogo"
+          disabled>
+        <input class="input-info" *ngIf="formJogo.value.dataJogo != undefined" type="text" formControlName="dataJogo"
+          [value]="formJogo.value.dataJogo" disabled>
+      </div>
+      <div class="div-infos">
+        <label for="local" class="label-info">Local</label>
+        <input class="input-info" *ngIf="formJogo.value.local == undefined" type="text" formControlName="local">
+        <input class="input-info" *ngIf="formJogo.value.local != undefined" type="text" formControlName="local"
+          [value]="formJogo.value.local">
+      </div>
+      <div class="button-info-div">
+
+      </div>
+    </form>
+  </div>
 </main>
 
 <footer>

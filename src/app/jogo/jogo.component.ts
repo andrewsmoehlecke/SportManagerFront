@@ -41,11 +41,10 @@ export class JogoComponent implements OnInit {
         pontuacaoTime1: data.pontuacaoTime1,
         pontuacaoTime2: data.pontuacaoTime2,
         dataJogo: data.dataJogo,
-        idTime1: data.idTime1,
-        idTime2: data.idTime2,
+        time1: data.time1,
+        time2: data.time2,
+        titulo: data.titulo,
       });
-
-      this.getTimesById(data.idTime1, data.idTime2);
     },
       (err) => {
         Swal.fire({
@@ -59,44 +58,16 @@ export class JogoComponent implements OnInit {
       });
   }
 
-  getTimesById(idTime1: Number, idTime2: Number) {
-    this.api.getTimeById(idTime1).subscribe((data) => {
-      this.time1 = data;
-    },
-      (err) => {
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Não foi possível encontrar o Time! :(',
-          timer: 2200,
-          showConfirmButton: false
-        });
-        console.error("Algo de errado não está certo " + err);
-      });
-
-    this.api.getTimeById(idTime2).subscribe((data) => {
-      this.time2 = data;
-    },
-      (err) => {
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Não foi possível encontrar o Time! :(',
-          timer: 2200,
-          showConfirmButton: false
-        });
-        console.error("Algo de errado não está certo " + err);
-      });
-  }
-
   public initForm(): void {
     this.formJogo = this.formBuilder.group({
-      idTime: [''],
-      nomeTime: ['', Validators.required],
-      numVitoria: [''],
-      numEmpate: [''],
-      numDerrota: [''],
-      dataCriacao: ['', Validators.required],
+      idTimeJogo: [''],
+      local: [''],
+      pontuacaoTime1: [''],
+      pontuacaoTime2: [''],
+      dataJogo: [''],
+      time1: [''],
+      time2: [''],
+      titulo: [''],
     });
   }
 }
