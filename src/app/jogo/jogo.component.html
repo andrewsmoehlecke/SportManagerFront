@@ -46,8 +46,19 @@
 <main>
   <div class="form">
     <form [formGroup]="formJogo" class="form-group">
-      <h2 class="h2-info"><a class="nome-time">{{formJogo.value.time1.nomeTime}}</a> vs <a class="nome-time">{{formJogo.value.time2.nomeTime}}</a></h2>
-
+      <h2 class="h2-info"><a class="nome-time">{{formJogo.value.time1.nomeTime}}</a> vs <a
+          class="nome-time">{{formJogo.value.time2.nomeTime}}</a></h2>
+      <div class="div-infos">
+        <label for="time1.nomeTime" class="label-info">Time {{formJogo.value.time1.nomeTime}}</label>
+        <mat-form-field appearance="fill">
+          <mat-label>Selecione o Time</mat-label>
+          <mat-select formControlName="time1">
+            <mat-option *ngFor="let time of allTimes" [value]="time">
+              {{time.nomeTime}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
       <div class="div-infos">
         <label for="pontuacaoTime1" class="label-info">Pontuação {{formJogo.value.time1.nomeTime}}</label>
         <input class="input-info" *ngIf="formJogo.value.pontuacaoTime1 == undefined" type="text"
@@ -57,10 +68,14 @@
       </div>
       <div class="div-infos">
         <label for="time2.nomeTime" class="label-info">Time {{formJogo.value.time2.nomeTime}}</label>
-        <input class="input-info" *ngIf="formJogo.value.time2.nomeTime == undefined" type="text"
-          formControlName="nomeTime">
-        <input class="input-info" *ngIf="formJogo.value.time1.nomeTime != undefined" type="text"
-          formControlName="nomeTime" [value]="formJogo.value.time2.nomeTime">
+        <mat-form-field appearance="fill">
+          <mat-label>Selecione o Time</mat-label>
+          <mat-select formControlName="time2">
+            <mat-option *ngFor="let time of allTimes" [value]="time">
+              {{time.nomeTime}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="div-infos">
         <label for="pontuacaoTime2" class="label-info">Pontuação {{formJogo.value.time2.nomeTime}}</label>
@@ -82,8 +97,8 @@
           [value]="formJogo.value.local">
       </div>
       <div class="button-info-div">
-        <button class="button-info-save"> <!-- (click)="updateTime()" -->Salvar</button>
-        <button class="button-info-delete"> <!-- (click)="deleteTime(formJogo.value.idJogo)" -->Deletar</button>
+        <button class="button-info-save" (click)="updateJogo()">Salvar</button>
+        <button class="button-info-delete" (click)="deleteJogo()">Deletar</button>
       </div>
     </form>
   </div>

@@ -135,6 +135,42 @@ export class ApiService {
       );
   }
 
+  updateJogo(jogo: TimeJogoDto) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.put<TimeJogoDto>(this.getURL(["time_jogo/" + jogo.idTimeJogo]), JSON.stringify(jogo), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug("Retorno Back")
+          console.debug(data);
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  deleteJogoById(id: Number): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete<any>(this.getURL(["time_jogo/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
   deleteTimeById(id: Number): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
