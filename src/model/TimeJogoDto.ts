@@ -6,4 +6,5 @@ export interface TimeJogoDto {
     dataJogo: Date;
     idTime1: Number;
     idTime2: Number;
+    titulo: String;
 }

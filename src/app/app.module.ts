@@ -16,6 +16,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { JogosComponent } from './jogos/jogos.component';
 import { JogoComponent } from './jogo/jogo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FuncaoTimeComponent } from './funcao-time/funcao-time.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PerfilComponent,
     JogosComponent,
     JogoComponent,
+    FuncaoTimeComponent,
   ],
   imports: [
     MatListModule,

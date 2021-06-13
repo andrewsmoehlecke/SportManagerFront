@@ -5,4 +5,5 @@ export interface TimeDto {
     numEmpate: Number;
     numDerrota: Number;
     dataCriacao: Date;
+    fotoTime: String;
 }

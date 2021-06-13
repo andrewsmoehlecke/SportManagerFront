@@ -46,6 +46,7 @@
 <main>
   <mat-list>
     <mat-list-item *ngFor="let timeJogo of listTimeJogo" (click)="editTimeJogo(timeJogo.idTimeJogo)">
+      <div mat-line>{{timeJogo.titulo}}</div>
       <div mat-line>Data {{timeJogo.dataJogo}}</div>
       <div mat-line>Local {{timeJogo.local}}</div>
     </mat-list-item>
