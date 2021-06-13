@@ -17,6 +17,8 @@ import { JogosComponent } from './jogos/jogos.component';
 import { JogoComponent } from './jogo/jogo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FuncaoTimeComponent } from './funcao-time/funcao-time.component';
+import { MatSelectModule } from '@angular/material/select';
+import { CriarJogoComponent } from './criar-jogo/criar-jogo.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,10 @@ import { FuncaoTimeComponent } from './funcao-time/funcao-time.component';
     JogosComponent,
     JogoComponent,
     FuncaoTimeComponent,
+    CriarJogoComponent,
   ],
   imports: [
+    MatSelectModule,
     MatListModule,
     BrowserModule,
     AppRoutingModule,

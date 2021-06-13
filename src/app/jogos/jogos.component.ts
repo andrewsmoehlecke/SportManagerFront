@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TimeDto } from 'src/model/TimeDto';
 import { TimeJogoDto } from 'src/model/TimeJogoDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';

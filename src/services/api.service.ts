@@ -151,6 +151,23 @@ export class ApiService {
       );
   }
 
+  getAllUsuario(): Observable<UsuarioDto[]> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete<UsuarioDto[]>(this.getURL(["usuario"]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
   updateUsuario(usuario: UsuarioDto) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
