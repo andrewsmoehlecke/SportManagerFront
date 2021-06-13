@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TimeDto } from 'src/model/TimeDto';
 import { TimeJogoDto } from 'src/model/TimeJogoDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
@@ -18,6 +20,7 @@ export class JogosComponent implements OnInit {
   constructor(
     private usuarioLogado: UsuarioLogado,
     private api: ApiService,
+    private router: Router,
   ) {
     this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
@@ -37,4 +40,8 @@ export class JogosComponent implements OnInit {
     });
   }
 
+  // chamar esta função passando o id quando clicar em um elemento da lista de TimeJogo no html
+  editTimeJogo(idTimeJogo: Number) {
+    this.router.navigate(['/jogo', { idTimeJogo: idTimeJogo }]);
+  }
 }

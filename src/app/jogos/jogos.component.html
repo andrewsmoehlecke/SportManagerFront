@@ -29,11 +29,11 @@
             <div class="usuario-nome-div">
               <h2 class="usuario-nome">{{usuario.username}}</h2>
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == null">
               <img class="usuario-img"
                 src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
             </div>
-            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != null">
               <img class="usuario-img" src="{{usuario.fotoPerfil}}">
             </div>
           </button>
@@ -44,22 +44,12 @@
 </header>
 
 <main>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
-  <h4>.</h4>
+  <mat-list>
+    <mat-list-item *ngFor="let timeJogo of listTimeJogo" (click)="editTimeJogo(timeJogo.idTimeJogo)">
+      <div mat-line>Data {{timeJogo.dataJogo}}</div>
+      <div mat-line>Local {{timeJogo.local}}</div>
+    </mat-list-item>
+  </mat-list>
 </main>
 
 <footer>
