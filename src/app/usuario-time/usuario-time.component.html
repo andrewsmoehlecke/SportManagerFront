@@ -1,1 +1,49 @@
-<p>usuario-time works!</p>
+<main>
+    <div class="form">
+        <form [formGroup]="formUsuarioTime" class="form-group">
+            <h2 class="h2-info">Cadastrar Integrante do Time</h2>
+
+            <div class="div-infos">
+                <label for="cargo" class="label-info">Cargo</label>
+                <input class="input-info" type="text" formControlName="cargo">
+            </div>
+            <div class="div-infos">
+                <label for="usuario" class="label-info">Usuário</label>
+                <mat-form-field appearance="fill">
+                    <mat-label>Selecione o Usuário</mat-label>
+                    <mat-select formControlName="usuario">
+                        <mat-option *ngFor="let usuario of allUsuarios" [value]="usuario">
+                            {{usuario.username}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="div-infos">
+                <label for="time" class="label-info">Time</label>
+                <mat-form-field appearance="fill">
+                    <mat-label>Selecione o Time</mat-label>
+                    <mat-select formControlName="time">
+                        <mat-option *ngFor="let time of allTimes" [value]="time">
+                            {{time.nomeTime}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="div-infos">
+                <label for="funcaoTime" class="label-info">Função no Time</label>
+                <mat-form-field appearance="fill">
+                    <mat-label>Selecione a Função</mat-label>
+                    <mat-select formControlName="funcaoTime">
+                        <mat-option *ngFor="let funcaoTime of allFuncaoTime" [value]="funcaoTime">
+                            {{funcaoTime.nome}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="button-info-div">
+                <button class="button-info-save" (click)="cadastrarUsuarioTime()">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</main>

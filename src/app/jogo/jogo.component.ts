@@ -37,7 +37,7 @@ export class JogoComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: 'Não foi possível encontrar os Usuarios! :(',
+          title: 'Não foi possível encontrar os Usuários! :(',
           timer: 2200,
           showConfirmButton: false
         });

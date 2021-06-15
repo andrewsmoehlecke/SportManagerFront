@@ -6,6 +6,7 @@ import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { TimeJogoDto } from 'src/model/TimeJogoDto';
 import { createOfflineCompileUrlResolver } from '@angular/compiler';
+import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
 
 @Injectable({
   providedIn: 'root'
@@ -297,6 +298,23 @@ export class ApiService {
     });
 
     return this.http.post<TimeDto>(this.getURL(["time"]), form, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getAllFuncaoTime(): Observable<FuncaoTimeDto[]> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<FuncaoTimeDto[]>(this.getURL(["funcao_time"]), { headers: headers })
       .pipe(
         map((data) => {
           return data;
