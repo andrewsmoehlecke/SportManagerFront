@@ -5,6 +5,7 @@ import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
 import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,12 +19,16 @@ export class UsuarioTimeComponent implements OnInit {
   public allFuncaoTime: FuncaoTimeDto[] = [];
   public allUsuarios: UsuarioDto[] = [];
   public allTimes: TimeDto[] = [];
+  public usuario: UsuarioDto;
 
   constructor(
     private api: ApiService,
     private router: Router,
     private formBuilder: FormBuilder,
-  ) { }
+    private usuarioLogado: UsuarioLogado,
+  ) {
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
+  }
 
   ngOnInit(): void {
     this.initForm();
