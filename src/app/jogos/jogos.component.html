@@ -46,7 +46,9 @@
 <main>
   <mat-list class="lista-jogos">
     <mat-list-item class="item-jogos" *ngFor="let timeJogo of listTimeJogo">
-      <div mat-line class="time-jogos">{{timeJogo.time1.nomeTime}} <img class="img-jogos" src="../../assets/img/versus.png"> {{timeJogo.time2.nomeTime}}</div>
+      <div mat-line class="time-jogos">{{timeJogo.time1.nomeTime}}</div>
+      <div mat-line class="time-jogos"><img class="img-jogos" src="../../assets/img/versus.png"></div>
+      <div mat-line class="time-jogos">{{timeJogo.time2.nomeTime}}</div>
       <div mat-line class="info-jogos">{{timeJogo.dataJogo}}</div>
       <div mat-line class="info-jogos">{{timeJogo.local}}</div>
       <div mat-line><button class="button-jogos" (click)="editTimeJogo(timeJogo.idTimeJogo)">Editar</button></div>
