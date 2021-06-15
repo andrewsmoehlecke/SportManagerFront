@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,9 +13,11 @@ import Swal from 'sweetalert2';
 })
 export class CriarTimeComponent implements OnInit {
 
+  public usuario: UsuarioDto;
   public formTime: FormGroup;
 
   constructor(
+    private usuarioLogado: UsuarioLogado,
     private api: ApiService,
     private router: Router,
     private formBuilder: FormBuilder,
@@ -21,7 +25,9 @@ export class CriarTimeComponent implements OnInit {
     this.initForm();
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
+  }
 
   public initForm(): void {
     this.formTime = this.formBuilder.group({

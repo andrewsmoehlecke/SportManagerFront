@@ -44,7 +44,6 @@
 </header>
 
 <main>
-  <button routerLink="/criar-time">Criar Time</button>
   <mat-list class="lista-times">
     <mat-list-item class="item-times" *ngFor="let time of allTimes">
       <div mat-line class="nome-times">{{time.nomeTime}}</div>
@@ -54,6 +53,12 @@
       <div mat-line><button class="button-times" (click)="editTime(time.idTime)">Editar</button></div>
     </mat-list-item>
   </mat-list>
+  <div class="button-div">
+    <button class="button" routerLink="/criar-time">
+      <img class="button-img" src="../../assets/img/plus.png">
+      <p class="button-txt">Criar Time</p>
+    </button>
+  </div>
 </main>
 
 <footer>

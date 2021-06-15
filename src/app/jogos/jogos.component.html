@@ -44,16 +44,39 @@
 </header>
 
 <main>
-  <button routerLink="/criar-jogo">Criar Jogo</button>
   <mat-list class="lista-jogos">
     <mat-list-item class="item-jogos" *ngFor="let timeJogo of listTimeJogo">
-      <div mat-line class="time-jogos">{{timeJogo.time1.nomeTime}} <img class="img-jogos"
-          src="../../assets/img/versus.png"> {{timeJogo.time2.nomeTime}}</div>
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime != ''"><img class="time-jogos-img" src="{{timeJogo.time1.fototime}}">
+        <p class="nome-time">{{timeJogo.time1.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime1}}</p>
+      </div>
+
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime == ''"><img class="time-jogos-img"
+        src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+        <p class="nome-time">{{timeJogo.time1.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime1}}</p>
+      </div>
+
+      <div mat-line class="versus-jogos"><img class="img-jogos" src="../../assets/img/versus.png"></div>
+
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time2.fotoTime != ''"><img class="time-jogos-img" src="{{timeJogo.time2.fototime}}">
+        <p class="nome-time">{{timeJogo.time2.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime2}}</p>
+      </div>
+
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time2.fotoTime == ''"><img class="time-jogos-img"
+        src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+        <p class="nome-time">{{timeJogo.time2.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime2}}</p>
+      </div>
+
       <div mat-line class="info-jogos">{{timeJogo.dataJogo}}</div>
       <div mat-line class="info-jogos">{{timeJogo.local}}</div>
       <div mat-line><button class="button-jogos" (click)="editTimeJogo(timeJogo.idTimeJogo)">Editar</button></div>
     </mat-list-item>
   </mat-list>
+  <div class="button-div">
+    <button class="button" routerLink="/criar-jogo">
+      <img class="button-img" src="../../assets/img/plus.png">
+      <p class="button-txt">Criar Jogo</p>
+    </button>
+  </div>
 </main>
 
 <footer>
