@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,13 +13,16 @@ import Swal from 'sweetalert2';
 export class FuncaoTimeComponent implements OnInit {
 
   public formFuncaoTime: FormGroup;
+  public usuario: UsuarioDto;
 
   constructor(
+    private usuarioLogado: UsuarioLogado,
     private formBuilder: FormBuilder,
     private api: ApiService,
   ) { }
 
   ngOnInit(): void {
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
     this.initForm();
   }
 

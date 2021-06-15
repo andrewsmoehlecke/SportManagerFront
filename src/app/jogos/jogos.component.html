@@ -46,11 +46,13 @@
 <main>
   <mat-list class="lista-jogos">
     <mat-list-item class="item-jogos" *ngFor="let timeJogo of listTimeJogo">
-      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime != ''"><img class="time-jogos-img" src="{{timeJogo.time1.fototime}}">
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime != ''">
+        <img class="time-jogos-img" src="{{timeJogo.time1.fototime}}">
         <p class="nome-time">{{timeJogo.time1.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime1}}</p>
       </div>
 
-      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime == ''"><img class="time-jogos-img"
+      <div mat-line class="time-jogos" *ngIf="timeJogo.time1.fotoTime == ''">
+        <img class="time-jogos-img"
         src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
         <p class="nome-time">{{timeJogo.time1.nomeTime}}</p> <p class="pontuacao-time">{{timeJogo.pontuacaoTime1}}</p>
       </div>
