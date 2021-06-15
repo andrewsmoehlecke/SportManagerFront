@@ -35,6 +35,7 @@ export class TimeComponent implements OnInit {
       numEmpate: [''],
       numDerrota: [''],
       dataCriacao: ['', Validators.required],
+      fotoTime: [''],
     });
   }
 
@@ -51,6 +52,7 @@ export class TimeComponent implements OnInit {
         numEmpate: data.numEmpate,
         numDerrota: data.numDerrota,
         dataCriacao: data.dataCriacao,
+        fotoTime: data.fotoTime,
       });
     },
       (err) => {
@@ -74,6 +76,7 @@ export class TimeComponent implements OnInit {
         numEmpate: data.numEmpate,
         numDerrota: data.numDerrota,
         dataCriacao: data.dataCriacao,
+        fotoTime: data.fotoTime,
       });
 
       Swal.fire({
@@ -105,7 +108,6 @@ export class TimeComponent implements OnInit {
         timer: 2200,
         showConfirmButton: false
       });
-
       this.router.navigate(['/times']);
     },
       (err) => {

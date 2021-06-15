@@ -9,6 +9,7 @@ import { TimeComponent } from './time/time.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CriarJogoComponent } from './criar-jogo/criar-jogo.component';
+import { CriarTimeComponent } from './criar-time/criar-time.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'criar-jogo',
     component: CriarJogoComponent,
+  },
+  {
+    path: 'criar-time',
+    component: CriarTimeComponent,
   },
   {
     path: '**',

@@ -1,0 +1,19 @@
+<main>
+    <div class="form">
+        <form [formGroup]="formTime" class="form-group">
+            <h2 class="h2-info">Coloca um título vicente</h2>
+
+            <div class="div-infos">
+                <label for="nomeTime" class="label-info">Nome do Time</label>
+                <input class="input-info" type="text" formControlName="nomeTime">
+            </div>
+            <div class="div-infos">
+                <label for="fotoTime" class="label-info">URL Foto do Time</label>
+                <input class="input-info" type="url" formControlName="fotoTime" [value]="formTime.value.fotoTime">
+            </div>
+            <div class="button-info-div">
+                <button class="button-info-save" (click)="criarTime()">Criar</button>
+            </div>
+        </form>
+    </div>
+</main>

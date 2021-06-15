@@ -76,11 +76,10 @@
           formControlName="numDerrota" [value]="formTime.value.numDerrota">
       </div>
       <div class="div-infos">
-        <label for="fotoPerfil" class="label-info">URL Foto do Time</label>
-        <input class="input-info" *ngIf="formTime.value.fotoPerfil == undefined" type="url"
-          formControlName="fotoPerfil">
-        <input class="input-info" *ngIf="formTime.value.fotoPerfil != undefined" type="url"
-          formControlName="fotoPerfil" [value]="formTime.value.fotoPerfil">
+        <label for="fotoTime" class="label-info">URL Foto do Time</label>
+        <input class="input-info" *ngIf="formTime.value.fotoTime == undefined" type="url" formControlName="fotoTime">
+        <input class="input-info" *ngIf="formTime.value.fotoTime != undefined" type="url" formControlName="fotoTime"
+          [value]="formTime.value.fotoTime">
       </div>
       <div class="button-info-div">
         <button class="button-info-save" (click)="updateTime()">Salvar</button>

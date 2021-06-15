@@ -11,5 +11,4 @@ export class UsuarioTimeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
