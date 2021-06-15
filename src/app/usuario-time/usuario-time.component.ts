@@ -80,7 +80,9 @@ export class UsuarioTimeComponent implements OnInit {
       });
   }
 
-  // cadastrarUsuarioTime()
+  cadastrarUsuarioTime() {
+
+  }
 
   public initForm(): void {
     this.formUsuarioTime = this.formBuilder.group({
