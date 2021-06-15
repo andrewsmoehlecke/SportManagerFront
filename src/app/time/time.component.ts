@@ -5,6 +5,7 @@ import { UsuarioDto } from 'src/model/UsuarioDto';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { UsuarioTimeDto } from 'src/model/UsuarioTimeDto';
 
 @Component({
   selector: 'app-time',
@@ -15,6 +16,7 @@ export class TimeComponent implements OnInit {
 
   public formTime: FormGroup;
   public usuario: UsuarioDto;
+  public listUsuarioTime: UsuarioTimeDto[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,7 +42,9 @@ export class TimeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.findTimeById(Number(this.route.snapshot.paramMap.get('idTime')));
+    let idTime = Number(this.route.snapshot.paramMap.get('idTime'));
+    this.findTimeById(idTime);
+    this.getUsuarioTimeByIdTime(idTime);
   }
 
   findTimeById(id: Number) {
@@ -115,6 +119,22 @@ export class TimeComponent implements OnInit {
           position: 'center',
           icon: 'error',
           title: 'Não foi possível deletar o time! :(',
+          timer: 2500,
+          showConfirmButton: false
+        });
+        console.error("Algo de errado não está certo " + err);
+      });
+  }
+
+  getUsuarioTimeByIdTime(idTime: Number) {
+    this.api.getFuncaoTimeByIdTime(idTime).subscribe((data) => {
+      this.listUsuarioTime = data;
+    },
+      (err) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Não foi possível encontrar Usuários neste Time! :(',
           timer: 2500,
           showConfirmButton: false
         });
