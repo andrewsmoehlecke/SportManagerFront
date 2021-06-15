@@ -42,7 +42,6 @@ export class CriarJogoComponent implements OnInit {
     this.formCriarJogo.value.dataJogo = new Date(this.formCriarJogo.value.dataJogo);
 
     this.api.criarJogo(this.formCriarJogo.value).subscribe((data) => {
-      console.debug(data);
     }, (err) => {
       Swal.fire({
         position: 'center',

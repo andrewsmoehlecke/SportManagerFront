@@ -6,6 +6,7 @@ import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { TimeJogoDto } from 'src/model/TimeJogoDto';
 import { createOfflineCompileUrlResolver } from '@angular/compiler';
+import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
 
 @Injectable({
   providedIn: 'root'
@@ -135,6 +136,42 @@ export class ApiService {
       );
   }
 
+  updateJogo(jogo: TimeJogoDto) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.put<TimeJogoDto>(this.getURL(["time_jogo/" + jogo.idTimeJogo]), JSON.stringify(jogo), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug("Retorno Back")
+          console.debug(data);
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  deleteJogoById(id: Number): Observable<any> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete<any>(this.getURL(["time_jogo/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
   deleteTimeById(id: Number): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -244,6 +281,40 @@ export class ApiService {
     });
 
     return this.http.post<TimeJogoDto>(this.getURL(["time_jogo"]), form, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  criarTime(form) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post<TimeDto>(this.getURL(["time"]), form, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getAllFuncaoTime(): Observable<FuncaoTimeDto[]> {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<FuncaoTimeDto[]>(this.getURL(["funcao_time"]), { headers: headers })
       .pipe(
         map((data) => {
           return data;
