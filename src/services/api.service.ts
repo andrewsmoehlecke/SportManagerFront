@@ -196,7 +196,7 @@ export class ApiService {
       'Accept': 'application/json'
     });
 
-    return this.http.delete<UsuarioDto[]>(this.getURL(["usuario"]), { headers: headers })
+    return this.http.get<UsuarioDto[]>(this.getURL(["usuario"]), { headers: headers })
       .pipe(
         map((data) => {
           return data;
@@ -309,6 +309,23 @@ export class ApiService {
       );
   }
 
+  criarFuncaoTime(form) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.post(this.getURL(["funcao_time"]), form, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
   getAllFuncaoTime(): Observable<FuncaoTimeDto[]> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -332,7 +349,41 @@ export class ApiService {
       'Accept': 'application/json'
     });
 
-    return this.http.post<UsuarioTimeDto>(this.getURL(["usuario_time"]), form, { headers: headers })
+    return this.http.post(this.getURL(["usuario_time"]), form, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  findFuncaoTimeById(id) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<FuncaoTimeDto>(this.getURL(["funcao_time/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  editarFuncaoTime(form) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.put<FuncaoTimeDto>(this.getURL(["funcao_time/" + form.idFuncaoTime]), form, { headers: headers })
       .pipe(
         map((data) => {
           return data;

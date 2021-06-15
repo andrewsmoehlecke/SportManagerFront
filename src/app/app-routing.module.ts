@@ -10,6 +10,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CriarJogoComponent } from './criar-jogo/criar-jogo.component';
 import { CriarTimeComponent } from './criar-time/criar-time.component';
+import { UsuarioTimeComponent } from './usuario-time/usuario-time.component';
+import { FuncaoTimeComponent } from './funcao-time/funcao-time.component';
+import { ModificarFuncaoTimeComponent } from './modificar-funcao-time/modificar-funcao-time.component';
+import { FuncoesTimeComponent } from './funcoes-time/funcoes-time.component';
 
 const routes: Routes = [
   {
@@ -51,6 +55,22 @@ const routes: Routes = [
   {
     path: 'criar-time',
     component: CriarTimeComponent,
+  },
+  {
+    path: 'usuario-time',
+    component: UsuarioTimeComponent,
+  },
+  {
+    path: 'criar-funcao-time',
+    component: FuncaoTimeComponent,
+  },
+  {
+    path: 'modificar-funcao-time',
+    component: ModificarFuncaoTimeComponent,
+  },
+  {
+    path: 'funcao-time',
+    component: FuncoesTimeComponent,
   },
   {
     path: '**',

@@ -81,7 +81,18 @@ export class UsuarioTimeComponent implements OnInit {
   }
 
   cadastrarUsuarioTime() {
-
+    this.api.cadastrarUsuarioTime(this.formUsuarioTime.value).subscribe((data) => {
+    },
+      (err) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Não foi possível cadastrar o Usuário no Time! :(',
+          timer: 2200,
+          showConfirmButton: false
+        });
+        console.error("Algo de errado não está certo " + err);
+      });
   }
 
   public initForm(): void {

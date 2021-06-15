@@ -37,7 +37,6 @@ export class JogosComponent implements OnInit {
       });
       console.error("Algo de errado não está certo " + err);
     });
-    console.log(this.listTimeJogo);
   }
 
   // chamar esta função passando o id quando clicar em um elemento da lista de TimeJogo no html

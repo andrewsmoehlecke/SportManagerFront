@@ -1,0 +1,8 @@
+<main>
+    <mat-list class="">
+        <mat-list-item class="item-jogos" *ngFor="let ft of allFuncaoTime">
+            <div mat-line class="time-jogos">{{ft.nome}}</div>
+            <div mat-line><button class="button-jogos" (click)="editFuncaoTime(ft.idFuncaoTime)">Editar</button></div>
+        </mat-list-item>
+    </mat-list>
+</main>
