@@ -1,19 +1,70 @@
-<main>
-    <div class="form">
-        <form [formGroup]="formTime" class="form-group">
-            <h2 class="h2-info">Coloca um título vicente</h2>
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <h1 class="nav-imagem-h1"><button routerLink="/home" class="nav-button-img"><img class="nav-imagem"
+              src="../../assets/img/logo.png"></button></h1>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/home">
+          <p class="nav-paragrafo">Home</p>
+          <img class="nav-imgs" src="../../assets/img/home.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/times">
+          <p class="nav-paragrafo">Times</p>
+          <img class="nav-imgs" src="../../assets/img/times.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/jogos">
+          <p class="nav-paragrafo">Jogos</p>
+          <img class="nav-imgs" src="../../assets/img/jogos.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <div class="usuario-logado">
+          <button routerLink="/perfil" class="usuario-button">
+            <div class="usuario-nome-div">
+              <h2 class="usuario-nome">{{usuario.username}}</h2>
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
+              <img class="usuario-img"
+                src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
+              <img class="usuario-img" src="{{usuario.fotoPerfil}}">
+            </div>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-            <div class="div-infos">
-                <label for="nomeTime" class="label-info">Nome do Time</label>
-                <input class="input-info" type="text" formControlName="nomeTime">
-            </div>
-            <div class="div-infos">
-                <label for="fotoTime" class="label-info">URL Foto do Time</label>
-                <input class="input-info" type="url" formControlName="fotoTime" [value]="formTime.value.fotoTime">
-            </div>
-            <div class="button-info-div">
-                <button class="button-info-save" (click)="criarTime()">Criar</button>
-            </div>
-        </form>
-    </div>
+<main>
+  <div class="form">
+    <form [formGroup]="formTime" class="form-group">
+      <h2 class="h2-info">Criar Time</h2>
+
+      <div class="div-infos">
+        <label for="nomeTime" class="label-info">Nome do Time</label>
+        <input class="input-info" type="text" formControlName="nomeTime">
+      </div>
+      <div class="div-infos">
+        <label for="fotoTime" class="label-info">URL Foto do Time</label>
+        <input class="input-info" type="url" formControlName="fotoTime" [value]="formTime.value.fotoTime">
+      </div>
+      <div class="button-info-div">
+        <button class="button" (click)="criarTime()">Criar</button>
+      </div>
+    </form>
+  </div>
 </main>
+
+<footer>
+  <h1><img class="footer-imagem" src="../../assets/img/logo.png"></h1>
+  <h3 class="footer-copyright">2021 &copy; Remor Technologies. Todos os direitos reservados.</h3>
+</footer>
+

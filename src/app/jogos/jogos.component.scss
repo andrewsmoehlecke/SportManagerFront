@@ -140,9 +140,11 @@ header {
 /* --------------------------------- MAIN --------------------------------- */
 
 main {
+  margin: 75px;
+
   .lista-jogos {
     padding: 0px;
-    margin: 75px auto;
+    margin: 0px auto;
     max-width: 40%;
 
     .item-jogos {
@@ -150,20 +152,41 @@ main {
       background-color: #2a2a2a;
       border-radius: 20px;
       color: #ffffff;
-      margin: 15px 0;
+      margin: 15px 0 0;
       padding: 80px 0;
       text-align: center;
     }
 
     .time-jogos {
-      padding: 5px;
-      font-size: 40px;
+      margin-bottom: 60px;
+      height: 40px;
+
+      .nome-time {
+        display: inline;
+        font-size: 40px;
+        margin: 0 5px;
+      }
+
+      .pontuacao-time {
+        display: inline;
+        font-size: 40px;
+        margin-left: 15px;
+        color: #e414ff;
+      }
+
+      .time-jogos-img {
+        width: 32px;
+        border-radius: 50%;
+      }
+    }
+
+    .versus-jogos {
+      height: 18px;
       margin-bottom: 60px;
 
       .img-jogos {
         vertical-align: middle;
         width: 30px;
-        margin: 0 20px;
       }
     }
 
@@ -189,6 +212,36 @@ main {
       cursor: pointer;
       background-color: #aaaaaa;
     }
+  }
+
+  .button {
+    border: 5px solid #191919;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    color: #ffffff;
+    margin: 15px calc(85% / 2) 0;
+    padding: 20px;
+    text-align: center;
+    width: 15%;
+    height: 100px;
+
+    .button-img {
+      width: 50px;
+    }
+
+    .button-txt {
+      position: relative;
+      display: inline;
+      margin-left: 10px;
+      vertical-align: 18px;
+      font-size: 18px;
+    }
+  }
+
+  .button:hover {
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border-color: #888888;
   }
 }
 

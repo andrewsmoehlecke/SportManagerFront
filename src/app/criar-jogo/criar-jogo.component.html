@@ -1,46 +1,87 @@
-<!-- Para selecionar os time do jogo -->
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <h1 class="nav-imagem-h1"><button routerLink="/home" class="nav-button-img"><img class="nav-imagem"
+              src="../../assets/img/logo.png"></button></h1>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/home">
+          <p class="nav-paragrafo">Home</p>
+          <img class="nav-imgs" src="../../assets/img/home.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/times">
+          <p class="nav-paragrafo">Times</p>
+          <img class="nav-imgs" src="../../assets/img/times.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/jogos">
+          <p class="nav-paragrafo">Jogos</p>
+          <img class="nav-imgs" src="../../assets/img/jogos.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <div class="usuario-logado">
+          <button routerLink="/perfil" class="usuario-button">
+            <div class="usuario-nome-div">
+              <h2 class="usuario-nome">{{usuario.username}}</h2>
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
+              <img class="usuario-img"
+                src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
+              <img class="usuario-img" src="{{usuario.fotoPerfil}}">
+            </div>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-
-
-<div class="form">
+<main>
+  <div class="form">
     <form [formGroup]="formCriarJogo" class="form-group">
-        <div class="div-infos">
-            <label for="local" class="label-info">Local</label>
-            <input class="input-info" type="text" formControlName="local">
-        </div>
-        <div class="div-infos">
-            <label for="dataJogo" class="label-info">Data e Hora</label>
-            <input class="input-info" type="datetime" formControlName="dataJogo" placeholder="yyyy-MM-dd hh:mm:ss">
-        </div>
-        <div class="div-infos">
-            <label for="titulo" class="label-info">Título</label>
-            <input class="input-info" type="text" formControlName="titulo">
-        </div>
-        <div class="div-infos">
-            <label for="time1" class="label-info">Time 1</label>
-            <mat-form-field appearance="fill">
-                <mat-label>Selecione o Time</mat-label>
-                <mat-select formControlName="time1">
-                    <mat-option *ngFor="let time of allTimes" [value]="time">
-                        {{time.nomeTime}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="div-infos">
-            <label for="time2" class="label-info">Time 2</label>
-            <mat-form-field appearance="fill">
-                <mat-label>Selecione o Time</mat-label>
-                <mat-select formControlName="time2">
-                    <mat-option *ngFor="let time of allTimes" [value]="time">
-                        {{time.nomeTime}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
+      <h2 class="h2-info">Criar Jogo</h2>
 
-        <div class="button-info-div">
-            <button (click)="criarJogo()">Criar</button>
-        </div>
+      <div class="div-infos">
+        <label for="local" class="label-info">Local</label>
+        <input class="input-info" type="text" formControlName="local">
+      </div>
+      <div class="div-infos">
+        <label for="dataJogo" class="label-info">Data e Hora</label>
+        <input class="input-info" type="datetime" formControlName="dataJogo" placeholder="yyyy-MM-dd hh:mm:ss">
+      </div>
+      <div class="div-infos">
+        <label for="time1.nomeTime" class="label-info">Time 1</label>
+        <mat-form-field class="mat-field" appearance="fill">
+          <mat-label class="mat-label">Selecione o Time</mat-label>
+          <mat-select formControlName="time1">
+            <mat-option class="mat-option" *ngFor="let time of allTimes" [value]="time">{{time.nomeTime}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="div-infos">
+        <label for="time1.nomeTime" class="label-info">Time 2</label>
+        <mat-form-field class="mat-field" appearance="fill">
+          <mat-label class="mat-label">Selecione o Time</mat-label>
+          <mat-select formControlName="time2">
+            <mat-option class="mat-option" *ngFor="let time of allTimes" [value]="time">{{time.nomeTime}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="button-info-div">
+        <button class="button" (click)="criarJogo()">Criar</button>
+      </div>
     </form>
 </div>
+</main>
+
+<footer>
+  <h1><img class="footer-imagem" src="../../assets/img/logo.png"></h1>
+  <h3 class="footer-copyright">2021 &copy; Remor Technologies. Todos os direitos reservados.</h3>
+</footer>

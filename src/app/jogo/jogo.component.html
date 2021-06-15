@@ -49,13 +49,11 @@
       <h2 class="h2-info"><a class="nome-time">{{formJogo.value.time1.nomeTime}}</a> vs <a
           class="nome-time">{{formJogo.value.time2.nomeTime}}</a></h2>
       <div class="div-infos">
-        <label for="time1.nomeTime" class="label-info">Time {{formJogo.value.time1.nomeTime}}</label>
-        <mat-form-field appearance="fill">
-          <mat-label>Selecione o Time</mat-label>
+        <label for="time1.nomeTime" class="label-info">Time 1 ({{formJogo.value.time1.nomeTime}})</label>
+        <mat-form-field class="mat-field" appearance="fill">
+          <mat-label class="mat-label">Selecione o Time</mat-label>
           <mat-select formControlName="time1">
-            <mat-option *ngFor="let time of allTimes" [value]="time">
-              {{time.nomeTime}}
-            </mat-option>
+            <mat-option class="mat-option" *ngFor="let time of allTimes" [value]="time">{{time.nomeTime}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -67,13 +65,11 @@
           formControlName="pontuacaoTime1" [value]="formJogo.value.pontuacaoTime1">
       </div>
       <div class="div-infos">
-        <label for="time2.nomeTime" class="label-info">Time {{formJogo.value.time2.nomeTime}}</label>
-        <mat-form-field appearance="fill">
-          <mat-label>Selecione o Time</mat-label>
+        <label for="time1.nomeTime" class="label-info">Time 2 ({{formJogo.value.time2.nomeTime}})</label>
+        <mat-form-field class="mat-field" appearance="fill">
+          <mat-label class="mat-label">Selecione o Time</mat-label>
           <mat-select formControlName="time2">
-            <mat-option *ngFor="let time of allTimes" [value]="time">
-              {{time.nomeTime}}
-            </mat-option>
+            <mat-option class="mat-option" *ngFor="let time of allTimes" [value]="time">{{time.nomeTime}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

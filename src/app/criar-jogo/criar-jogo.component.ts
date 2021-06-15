@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TimeDto } from 'src/model/TimeDto';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,14 +13,17 @@ import Swal from 'sweetalert2';
 })
 export class CriarJogoComponent implements OnInit {
 
+  public usuario: UsuarioDto;
   public allTimes: TimeDto[] = [];
   public formCriarJogo: FormGroup;
 
   constructor(
+    private usuarioLogado: UsuarioLogado,
     private api: ApiService,
     private formBuilder: FormBuilder,
   ) {
     this.initForm();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   ngOnInit(): void {
