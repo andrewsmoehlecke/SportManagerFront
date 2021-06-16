@@ -247,6 +247,33 @@ main {
         cursor: pointer;
         background-color: #ff0000;
       }
+
+      .h2-info-table {
+        color: #ffffff;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+
+      .table {
+        margin: 0 auto;
+        font-size: 20px;
+        color: #ffffff;
+
+        .tr {
+          .td-nome, .td-funcao {
+            border-top: 1px solid #ffffff;
+          }
+
+          .td-nome {
+            padding-right: 10px;
+          }
+
+          .th-funcao, .td-funcao {
+            padding-left: 150px;
+          }
+        }
+      }
     }
   }
 }

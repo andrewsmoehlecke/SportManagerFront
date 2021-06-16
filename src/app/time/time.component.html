@@ -90,17 +90,21 @@
 
   <div class="form">
     <form [formGroup]="formTime" class="form-group">
-      <h2 class="h2-info">Jogadores</h2>
+      <h2 class="h2-info-table">Jogadores</h2>
 
-      <table>
-        <tr *ngFor="let usuarioTime of listUsuarioTime">
-          <td>{{usuarioTime.usuario.username}}</td>
-          <td>{{usuarioTime.funcaoTime.nome}}</td>
+      <table class="table">
+        <tr class="tr">
+          <th scope="col" class="th-nome">Nome</th>
+          <th scope="col" class="th-funcao">Função</th>
+        </tr>
+        <tr class="tr" *ngFor="let usuarioTime of listUsuarioTime">
+          <td class="td-nome">{{usuarioTime.usuario.username}}</td>
+          <td class="td-funcao">{{usuarioTime.funcaoTime.nome}}</td>
         </tr>
       </table>
 
       <div class="button">
-        <button class="button-edit" routerLink="/usuario-time">Editar</button>
+        <button class="button-edit" routerLink="/funcao-time">Editar</button>
       </div>
     </form>
   </div>

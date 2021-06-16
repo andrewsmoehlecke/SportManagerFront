@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,14 +14,17 @@ import Swal from 'sweetalert2';
 })
 export class ModificarFuncaoTimeComponent implements OnInit {
 
+  public usuario: UsuarioDto;
   public formFuncaoTime: FormGroup;
 
   constructor(
+    private usuarioLogado: UsuarioLogado,
     private formBuilder: FormBuilder,
     private api: ApiService,
     private route: ActivatedRoute,
   ) {
     this.initForm();
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   ngOnInit(): void {
