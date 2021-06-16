@@ -57,6 +57,14 @@ export class PerfilComponent implements OnInit {
         dataCriacao: data.dataCriacao,
         fotoPerfil: data.fotoPerfil,
       });
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Perfil atualizado!',
+        timer: 2100,
+        showConfirmButton: false
+      });
     },
       (err) => {
         Swal.fire({
