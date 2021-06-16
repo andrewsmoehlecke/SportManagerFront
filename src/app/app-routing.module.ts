@@ -61,16 +61,12 @@ const routes: Routes = [
     component: UsuarioTimeComponent,
   },
   {
-    path: 'criar-funcao-time',
+    path: 'funcao-time',
     component: FuncaoTimeComponent,
   },
   {
     path: 'modificar-funcao-time',
     component: ModificarFuncaoTimeComponent,
-  },
-  {
-    path: 'funcao-time',
-    component: FuncoesTimeComponent,
   },
   {
     path: '**',
