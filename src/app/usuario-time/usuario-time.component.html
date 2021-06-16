@@ -64,17 +64,6 @@
         </mat-form-field>
       </div>
       <div class="div-infos">
-        <label for="time" class="label-info">Time</label>
-        <mat-form-field class="mat-field" appearance="fill">
-          <mat-label class="mat-label">Selecione o Time</mat-label>
-          <mat-select formControlName="time">
-            <mat-option class="mat-option" *ngFor="let time of allTimes" [value]="time">
-              {{time.nomeTime}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="div-infos">
         <label for="funcaoTime" class="label-info">Função no Time</label>
         <mat-form-field class="mat-field" appearance="fill">
           <mat-label class="mat-label">Selecione a Função</mat-label>
@@ -87,16 +76,9 @@
       </div>
 
       <div class="button-info-div">
-      <button class="button" (click)="cadastrarUsuarioTime()">Cadastrar</button>
+        <button class="button" (click)="cadastrarUsuarioTime()">Cadastrar</button>
       </div>
     </form>
-  </div>
-
-  <div class="button-div">
-    <button class="button-funcao-time" routerLink="/funcao-time">
-      <img class="button-img" src="../../assets/img/plus.png">
-      <p class="button-txt">Criar Função Time</p>
-    </button>
   </div>
 </main>
 

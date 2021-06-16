@@ -23,6 +23,7 @@ import { UsuarioTimeComponent } from './usuario-time/usuario-time.component';
 import { CriarTimeComponent } from './criar-time/criar-time.component';
 import { ModificarFuncaoTimeComponent } from './modificar-funcao-time/modificar-funcao-time.component';
 import { FoncoesTimeComponent } from './foncoes-time/foncoes-time.component';
+import { EditarUsuarioTimeComponent } from './editar-usuario-time/editar-usuario-time.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FoncoesTimeComponent } from './foncoes-time/foncoes-time.component';
     CriarTimeComponent,
     ModificarFuncaoTimeComponent,
     FoncoesTimeComponent,
+    EditarUsuarioTimeComponent,
   ],
   imports: [
     MatSelectModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
@@ -21,6 +22,7 @@ export class CriarJogoComponent implements OnInit {
     private usuarioLogado: UsuarioLogado,
     private api: ApiService,
     private formBuilder: FormBuilder,
+    private router: Router,
   ) {
     this.initForm();
     this.usuario = this.usuarioLogado.getUsuarioLogado();
@@ -43,10 +45,17 @@ export class CriarJogoComponent implements OnInit {
   }
 
   criarJogo() {
-    // conver from string to Date
     this.formCriarJogo.value.dataJogo = new Date(this.formCriarJogo.value.dataJogo);
 
     this.api.criarJogo(this.formCriarJogo.value).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Jogo criado com sucesso! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
+      this.router.navigate(['/jogos'])
     }, (err) => {
       Swal.fire({
         position: 'center',

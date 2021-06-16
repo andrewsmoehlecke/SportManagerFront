@@ -47,6 +47,10 @@ export class TimeComponent implements OnInit {
     this.getUsuarioTimeByIdTime(idTime);
   }
 
+  cadastrarJogador(id: Number) {
+    this.router.navigate(['/usuario-time', { idTime: id }]);
+  }
+
   findTimeById(id: Number) {
     this.api.getTimeById(id).subscribe((data) => {
       this.formTime.patchValue({

@@ -47,7 +47,13 @@ export class ModificarFuncaoTimeComponent implements OnInit {
 
   editar() {
     this.api.editarFuncaoTime(this.formFuncaoTime.value).subscribe((data) => {
-      console.debug(data)
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Função time atualizada! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
       this.formFuncaoTime.patchValue({
         idFuncaoTime: data.idFuncaoTime,
         nome: data.nome,

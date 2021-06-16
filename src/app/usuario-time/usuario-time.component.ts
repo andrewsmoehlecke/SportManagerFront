@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
 import { TimeDto } from 'src/model/TimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
@@ -18,7 +18,7 @@ export class UsuarioTimeComponent implements OnInit {
   public formUsuarioTime: FormGroup;
   public allFuncaoTime: FuncaoTimeDto[] = [];
   public allUsuarios: UsuarioDto[] = [];
-  public allTimes: TimeDto[] = [];
+  public time: TimeDto;
   public usuario: UsuarioDto;
 
   constructor(
@@ -26,31 +26,18 @@ export class UsuarioTimeComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private usuarioLogado: UsuarioLogado,
+    private route: ActivatedRoute
   ) {
     this.usuario = this.usuarioLogado.getUsuarioLogado();
   }
 
   ngOnInit(): void {
+    this.api.getTimeById(Number(this.route.snapshot.paramMap.get('idTime'))).subscribe((data) => {
+      this.time = data;
+    });
     this.initForm();
     this.getAllFuncaoTime();
-    this.getAllTimes();
     this.getAllUsuarios();
-  }
-
-  getAllTimes() {
-    this.api.getAllTimes().subscribe((data) => {
-      this.allTimes = data;
-    },
-      (err) => {
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Não foi possível encontrar os Times! :(',
-          timer: 2200,
-          showConfirmButton: false
-        });
-        console.error("Algo de errado não está certo " + err);
-      });
   }
 
   getAllUsuarios() {
@@ -86,6 +73,7 @@ export class UsuarioTimeComponent implements OnInit {
   }
 
   cadastrarUsuarioTime() {
+    this.formUsuarioTime.value.time = this.time;
     this.api.cadastrarUsuarioTime(this.formUsuarioTime.value).subscribe((data) => {
       Swal.fire({
         position: 'center',
