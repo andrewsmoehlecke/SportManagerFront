@@ -93,9 +93,9 @@
       <h2 class="h2-info">Jogadores</h2>
 
       <table>
-        <tr>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let usuarioTime of listUsuarioTime">
+          <td>{{usuarioTime.usuario.username}}</td>
+          <td>{{usuarioTime.funcaoTime.nome}}</td>
         </tr>
       </table>
 

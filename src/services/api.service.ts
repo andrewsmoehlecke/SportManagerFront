@@ -400,7 +400,6 @@ export class ApiService {
       'Accept': 'application/json'
     });
 
-    console.debug('test')
     return this.http.get<UsuarioTimeDto[]>(this.getURL(["usuario_time/time/" + id]), { headers: headers })
       .pipe(
         map((data) => {
