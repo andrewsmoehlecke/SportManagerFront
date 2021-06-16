@@ -49,6 +49,7 @@ export class PerfilComponent implements OnInit {
   }
 
   updateUsuario() {
+    console.log(this.formUsuario.value);
     this.api.updateUsuario(this.formUsuario.value).subscribe((data) => {
       this.formUsuario.patchValue({
         idUsuario: data.idUsuario,
