@@ -21,7 +21,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { CriarJogoComponent } from './criar-jogo/criar-jogo.component';
 import { UsuarioTimeComponent } from './usuario-time/usuario-time.component';
 import { CriarTimeComponent } from './criar-time/criar-time.component';
-import { FuncoesTimeComponent } from './funcoes-time/funcoes-time.component';
 import { ModificarFuncaoTimeComponent } from './modificar-funcao-time/modificar-funcao-time.component';
 
 @NgModule({
@@ -39,7 +38,6 @@ import { ModificarFuncaoTimeComponent } from './modificar-funcao-time/modificar-
     CriarJogoComponent,
     UsuarioTimeComponent,
     CriarTimeComponent,
-    FuncoesTimeComponent,
     ModificarFuncaoTimeComponent,
   ],
   imports: [
