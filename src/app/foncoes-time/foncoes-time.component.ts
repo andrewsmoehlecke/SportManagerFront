@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,16 +14,17 @@ import Swal from 'sweetalert2';
 export class FoncoesTimeComponent implements OnInit {
 
   public allFuncoesTime: FuncaoTimeDto[] = [];
+  public usuario: UsuarioDto;
 
   constructor(
     private api: ApiService,
-    private router: Router,
+    private usuarioLogado: UsuarioLogado,
   ) { }
 
   ngOnInit(): void {
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
 
     this.api.getAllFuncaoTime().subscribe((data) => {
-      console.debug(data)
       this.allFuncoesTime = data;
     }, (err) => {
       Swal.fire({
