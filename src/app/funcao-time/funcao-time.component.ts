@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
 import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
@@ -19,10 +20,11 @@ export class FuncaoTimeComponent implements OnInit {
     private usuarioLogado: UsuarioLogado,
     private formBuilder: FormBuilder,
     private api: ApiService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    public Number(this.route.snapshot.paramMap.get('idTimeJogo'))
+    this.getFuncaoTimeById(Number(this.route.snapshot.paramMap.get('idFuncaoTime')))
     this.usuario = this.usuarioLogado.getUsuarioLogado();
     this.initForm();
   }
@@ -42,6 +44,25 @@ export class FuncaoTimeComponent implements OnInit {
           position: 'center',
           icon: 'error',
           title: 'Não foi possível cadastrar a Função de Time! :(',
+          timer: 2200,
+          showConfirmButton: false
+        });
+        console.error("Algo de errado não está certo " + err);
+      });
+  }
+
+  getFuncaoTimeById(id: Number) {
+    this.api.findFuncaoTimeById(id).subscribe((data) => {
+      this.formFuncaoTime.patchValue({
+        idFuncaoTime: data.idFuncaoTime,
+        nome: data.nome,
+      });
+    },
+      (err) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Não foi encontrada a Função de Time! :(',
           timer: 2200,
           showConfirmButton: false
         });
