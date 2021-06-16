@@ -22,7 +22,7 @@ export class FuncaoTimeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    publiic Number(this.route.snapshot.paramMap.get('idTimeJogo'))
+    public Number(this.route.snapshot.paramMap.get('idTimeJogo'))
     this.usuario = this.usuarioLogado.getUsuarioLogado();
     this.initForm();
   }
