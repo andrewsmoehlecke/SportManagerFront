@@ -1,7 +1,67 @@
-<mat-list class="">
-    <mat-list-item class="" *ngFor="let funcaoTime of allFuncoesTime">
-        <div mat-line class="">
-            <p class="">{{funcaoTime.nome}}</p>
+<header>
+  <nav>
+    <ul class="nav-list">
+      <li class="nav-item">
+        <h1 class="nav-imagem-h1"><button routerLink="/home" class="nav-button-img"><img class="nav-imagem"
+              src="../../assets/img/logo.png"></button></h1>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/home">
+          <p class="nav-paragrafo">Home</p>
+          <img class="nav-imgs" src="../../assets/img/home.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/times">
+          <p class="nav-paragrafo">Times</p>
+          <img class="nav-imgs" src="../../assets/img/times.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-button" routerLink="/jogos">
+          <p class="nav-paragrafo">Jogos</p>
+          <img class="nav-imgs" src="../../assets/img/jogos.png">
+        </button>
+      </li>
+      <li class="nav-item">
+        <div class="usuario-logado">
+          <button routerLink="/perfil" class="usuario-button">
+            <div class="usuario-nome-div">
+              <h2 class="usuario-nome">{{usuario.username}}</h2>
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil == ''">
+              <img class="usuario-img"
+                src="https://cdn.discordapp.com/avatars/358981896895594502/5866754dfde30d8c2a0037ba02529fd2.webp">
+            </div>
+            <div class="usuario-img-div" *ngIf="usuario.fotoPerfil != ''">
+              <img class="usuario-img" src="{{usuario.fotoPerfil}}">
+            </div>
+          </button>
         </div>
-    </mat-list-item>
-</mat-list>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<main>
+  <form class="form">
+    <div class="form-group">
+      <h2 class="h2-info">Funcões Time</h2>
+      <mat-list class="div-infos">
+        <mat-list-item class="item" *ngFor="let funcaoTime of allFuncoesTime">
+            <div mat-line class="line">
+              <button (click)="passaId(funcaoTime.idFuncaoTime)">
+                <p class="p">{{funcaoTime.nome}}</p>
+              </button>
+            </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </form>
+</main>
+
+<footer>
+  <h1><img class="footer-imagem" src="../../assets/img/logo.png"></h1>
+  <h3 class="footer-copyright">2021 &copy; Remor Technologies. Todos os direitos reservados.</h3>
+</footer>

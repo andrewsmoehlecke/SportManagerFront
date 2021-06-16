@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Form, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
@@ -13,12 +14,15 @@ import Swal from 'sweetalert2';
 })
 export class FoncoesTimeComponent implements OnInit {
 
+  public formFuncaoTime: FormGroup;
   public allFuncoesTime: FuncaoTimeDto[] = [];
   public usuario: UsuarioDto;
 
   constructor(
     private api: ApiService,
     private usuarioLogado: UsuarioLogado,
+    private formBuilder: FormBuilder,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +40,17 @@ export class FoncoesTimeComponent implements OnInit {
       });
       console.error("Algo de errado não está certo " + err);
     });
+  }
+
+  public initForm(): void {
+    this.formFuncaoTime = this.formBuilder.group({
+      idFuncaoTime: [''],
+      nome: ['', Validators.required],
+    });
+  }
+
+  passaId(idFuncaoTime) {
+    this.router.navigate(['/funcao-time', { idFuncaoTime: idFuncaoTime }])
   }
 
 }
