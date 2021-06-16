@@ -87,6 +87,13 @@ export class UsuarioTimeComponent implements OnInit {
 
   cadastrarUsuarioTime() {
     this.api.cadastrarUsuarioTime(this.formUsuarioTime.value).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Usuário cadastrado no Time! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
     },
       (err) => {
         Swal.fire({
