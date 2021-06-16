@@ -403,7 +403,6 @@ export class ApiService {
     return this.http.get<UsuarioTimeDto[]>(this.getURL(["usuario_time/time/" + id]), { headers: headers })
       .pipe(
         map((data) => {
-          console.debug(data)
           return data;
         }),
         catchError((err: HttpErrorResponse) => {
