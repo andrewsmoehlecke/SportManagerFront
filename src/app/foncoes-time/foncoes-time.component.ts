@@ -50,7 +50,7 @@ export class FoncoesTimeComponent implements OnInit {
   }
 
   passaId(idFuncaoTime) {
-    this.router.navigate(['/funcao-time', { idFuncaoTime: idFuncaoTime }])
+    this.router.navigate(['/modificar-funcao-time', { idFuncaoTime: idFuncaoTime }])
   }
 
 }

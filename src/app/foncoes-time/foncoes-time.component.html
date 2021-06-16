@@ -51,7 +51,7 @@
       <mat-list class="div-infos">
         <mat-list-item class="item" *ngFor="let funcaoTime of allFuncoesTime">
             <div mat-line class="line">
-              <button (click)="passaId(funcaoTime.idFuncaoTime)">
+              <button class="button" (click)="passaId(funcaoTime.idFuncaoTime)">
                 <p class="p">{{funcaoTime.nome}}</p>
               </button>
             </div>
