@@ -28,6 +28,13 @@ export class FuncaoTimeComponent implements OnInit {
 
   criar() {
     this.api.criarFuncaoTime(this.formFuncaoTime.value).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Função criada! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
     },
       (err) => {
         Swal.fire({
