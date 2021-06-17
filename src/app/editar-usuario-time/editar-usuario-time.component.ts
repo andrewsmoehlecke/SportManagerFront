@@ -30,7 +30,7 @@ export class EditarUsuarioTimeComponent implements OnInit {
   }
 
   updateUsuarioTime() {
-
+    console.debug(this.formUsuarioTime.value);
   }
 
   getAllFuncaoTime() {

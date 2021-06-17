@@ -1,10 +1,10 @@
-<!-- <main>
+<main>
     <form [formGroup]="formUsuarioTime" class="form-group">
-        <h2 class="h2-info">Modificar o Integrante do Time</h2>
+        <h2 class="h2-info">Modificar o Integrante {{formUsuarioTime.value.usuario.username}}</h2>
 
         <div class="div-infos">
             <label for="cargo" class="label-info">Cargo</label>
-            <input class="input-info" type="text" formControlName="cargo" [value]="formUsuarioTime.cargo">
+            <input class="input-info" type="text" formControlName="cargo" [value]="formUsuarioTime.value.cargo">
         </div>
         <div class="div-infos">
             <label for="funcaoTime" class="label-info">Função no Time</label>
@@ -17,9 +17,8 @@
                 </mat-select>
             </mat-form-field>
         </div>
-
         <div class="button-info-div">
-            <button class="button" (click)="">Modificar</button>
+            <button class="button" (click)="updateUsuarioTime()">Modificar</button>
         </div>
     </form>
-</main> -->
+</main>
