@@ -277,6 +277,8 @@ main {
         color: #ffffff;
 
         .tr {
+          padding: 15px auto;
+
           .td-nome, .td-funcao {
             border-top: 1px solid #ffffff;
           }
@@ -286,7 +288,7 @@ main {
           }
 
           .th-funcao, .td-funcao {
-            padding-left: 150px;
+            padding-left: 120px;
           }
         }
       }
