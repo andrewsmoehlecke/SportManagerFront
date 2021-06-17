@@ -462,4 +462,22 @@ export class ApiService {
         })
       );
   }
+
+  deleteUsuarioTime(id: Number) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete(this.getURL(["usuario_time/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug(data)
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
 }
