@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
+import { UsuarioDto } from 'src/model/UsuarioDto';
 import { UsuarioTimeDto } from 'src/model/UsuarioTimeDto';
 import { ApiService } from 'src/services/api.service';
+import { UsuarioLogado } from 'src/usuarioLogado/usuario-logado';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,15 +15,19 @@ import Swal from 'sweetalert2';
 })
 export class EditarUsuarioTimeComponent implements OnInit {
 
+  public usuario: UsuarioDto;
   public usuarioTime: UsuarioTimeDto;
   public formUsuarioTime: FormGroup;
   public allFuncoesTime: FuncaoTimeDto[] = [];
 
   constructor(
+    private usuarioLogado: UsuarioLogado,
     private route: ActivatedRoute,
     private api: ApiService,
     public formBuilder: FormBuilder,
-  ) { }
+  ) {
+    this.usuario = this.usuarioLogado.getUsuarioLogado();
+  }
 
   ngOnInit(): void {
     this.usuarioTime = JSON.parse(this.route.snapshot.paramMap.get('usuarioTime'));

@@ -94,8 +94,8 @@
 
       <table class="table">
         <tr class="tr">
-          <th scope="col" class="th-nome">Nome</th>
-          <th scope="col" class="th-funcao">Função</th>
+          <th class="th-nome">Nome</th>
+          <th class="th-funcao">Função</th>
         </tr>
         <tr class="tr" *ngFor="let usuarioTime of listUsuarioTime" (click)="editarUsuarioTime(usuarioTime)">
           <td class="td-nome">{{usuarioTime.usuario.username}}</td>
