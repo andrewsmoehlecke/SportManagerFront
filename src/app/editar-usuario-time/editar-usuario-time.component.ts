@@ -30,25 +30,60 @@ export class EditarUsuarioTimeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.usuarioTime = JSON.parse(this.route.snapshot.paramMap.get('usuarioTime'));
+    this.addValuestoForm(Number(this.route.snapshot.paramMap.get('idUsuarioTime')));
     this.initForm();
-    this.addValuestoForm();
     this.getAllFuncaoTime();
   }
 
-  addValuestoForm() {
-    this.formUsuarioTime.patchValue({
-      idUsuarioTime: this.usuarioTime.idUsuarioTime,
-      dataEntrada: this.usuarioTime.dataEntrada,
-      cargo: this.usuarioTime.cargo,
-      usuario: this.usuarioTime.usuario,
-      time: this.usuarioTime.time,
-      funcaoTime: this.usuarioTime.funcaoTime,
+  addValuestoForm(id) {
+    this.api.getUsuarioTimeById(id).subscribe((data) => {
+      this.formUsuarioTime.patchValue({
+        idUsuarioTime: data.idUsuarioTime,
+        dataEntrada: data.dataEntrada,
+        cargo: data.cargo,
+        usuario: data.usuario,
+        time: data.time,
+        funcaoTime: data.funcaoTime,
+      });
+    }, (err) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Não foi possível encontara o usuário! :(',
+        timer: 2500,
+        showConfirmButton: false
+      });
+      console.error("Algo de errado não está certo " + err);
     });
   }
 
   updateUsuarioTime() {
-    console.debug(this.formUsuarioTime.value);
+    this.api.updateUsuarioTime(this.formUsuarioTime.value).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Usuário atualizado!',
+        timer: 2500,
+        showConfirmButton: false
+      });
+      this.formUsuarioTime.patchValue({
+        idUsuarioTime: data.idUsuarioTime,
+        dataEntrada: data.dataEntrada,
+        cargo: data.cargo,
+        usuario: data.usuario,
+        time: data.time,
+        funcaoTime: data.funcaoTime,
+      });
+    }, (err) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Não foi possível atualizar o usuário! :(',
+        timer: 2500,
+        showConfirmButton: false
+      });
+      console.error("Algo de errado não está certo " + err);
+    });
   }
 
   getAllFuncaoTime() {

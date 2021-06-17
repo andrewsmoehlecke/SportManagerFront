@@ -428,20 +428,38 @@ export class ApiService {
       );
   }
 
-  updateUsuarioTime(dat: UsuarioTimeDto) {
-    // let headers = new HttpHeaders({
-    //   'Content-Type': 'application/json',
-    //   'Accept': 'application/json'
-    // });
+  updateUsuarioTime(data: UsuarioTimeDto) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
 
-    // return this.http.delete(this.getURL(["usuario_time/" + ]), { headers: headers })
-    //   .pipe(
-    //     map((data) => {
-    //       return data;
-    //     }),
-    //     catchError((err: HttpErrorResponse) => {
-    //       return Observable.throw(this.handleError(err));
-    //     })
-    //   );
+    return this.http.put<UsuarioTimeDto>(this.getURL(["usuario_time/" + data.idUsuarioTime]), data, { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  getUsuarioTimeById(id: Number) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.get<UsuarioTimeDto>(this.getURL(["usuario_time/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          console.debug(data)
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
   }
 }

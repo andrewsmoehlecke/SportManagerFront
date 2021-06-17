@@ -189,6 +189,6 @@ export class TimeComponent implements OnInit {
   }
 
   editarUsuarioTime(usuarioTime: UsuarioTimeDto) {
-    this.router.navigate(['/editar-usuario-time', { usuarioTime: JSON.stringify(usuarioTime) }]);
+    this.router.navigate(['/editar-usuario-time', { idUsuarioTime: usuarioTime.idUsuarioTime }]);
   }
 }
