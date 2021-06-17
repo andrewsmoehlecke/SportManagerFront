@@ -25,8 +25,20 @@ export class EditarUsuarioTimeComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuarioTime = JSON.parse(this.route.snapshot.paramMap.get('usuarioTime'));
-    this.getAllFuncaoTime();
     this.initForm();
+    this.addValuestoForm();
+    this.getAllFuncaoTime();
+  }
+
+  addValuestoForm() {
+    this.formUsuarioTime.patchValue({
+      idUsuarioTime: this.usuarioTime.idUsuarioTime,
+      dataEntrada: this.usuarioTime.dataEntrada,
+      cargo: this.usuarioTime.cargo,
+      usuario: this.usuarioTime.usuario,
+      time: this.usuarioTime.time,
+      funcaoTime: this.usuarioTime.funcaoTime,
+    });
   }
 
   updateUsuarioTime() {
