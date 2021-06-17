@@ -24,7 +24,6 @@ export class FuncaoTimeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getFuncaoTimeById(Number(this.route.snapshot.paramMap.get('idFuncaoTime')))
     this.usuario = this.usuarioLogado.getUsuarioLogado();
     this.initForm();
   }
@@ -44,25 +43,6 @@ export class FuncaoTimeComponent implements OnInit {
           position: 'center',
           icon: 'error',
           title: 'Não foi possível cadastrar a Função de Time! :(',
-          timer: 2200,
-          showConfirmButton: false
-        });
-        console.error("Algo de errado não está certo " + err);
-      });
-  }
-
-  getFuncaoTimeById(id: Number) {
-    this.api.findFuncaoTimeById(id).subscribe((data) => {
-      this.formFuncaoTime.patchValue({
-        idFuncaoTime: data.idFuncaoTime,
-        nome: data.nome,
-      });
-    },
-      (err) => {
-        Swal.fire({
-          position: 'center',
-          icon: 'error',
-          title: 'Não foi encontrada a Função de Time! :(',
           timer: 2200,
           showConfirmButton: false
         });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FuncaoTimeDto } from 'src/model/FuncaoTimeDto';
 import { UsuarioDto } from 'src/model/UsuarioDto';
 import { ApiService } from 'src/services/api.service';
@@ -22,6 +22,7 @@ export class ModificarFuncaoTimeComponent implements OnInit {
     private formBuilder: FormBuilder,
     private api: ApiService,
     private route: ActivatedRoute,
+    private router: Router,
   ) {
     this.initForm();
     this.usuario = this.usuarioLogado.getUsuarioLogado();
@@ -63,6 +64,28 @@ export class ModificarFuncaoTimeComponent implements OnInit {
         position: 'center',
         icon: 'error',
         title: 'Não foi possível editar a Função! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
+      console.error("Algo de errado não está certo " + err);
+    });
+  }
+
+  deletearFuncaoTime() {
+    this.api.deleteFuncaoTime(this.formFuncaoTime.value.idFuncaoTime).subscribe((data) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Função time deletada! :(',
+        timer: 2200,
+        showConfirmButton: false
+      });
+      this.router.navigate(['/times']);
+    }, (err) => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Não foi possível deletar a Função! :(',
         timer: 2200,
         showConfirmButton: false
       });

@@ -410,4 +410,38 @@ export class ApiService {
         })
       );
   }
+
+  deleteFuncaoTime(id: Number) {
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    });
+
+    return this.http.delete(this.getURL(["funcao_time/" + id]), { headers: headers })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return Observable.throw(this.handleError(err));
+        })
+      );
+  }
+
+  updateUsuarioTime(dat: UsuarioTimeDto) {
+    // let headers = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    //   'Accept': 'application/json'
+    // });
+
+    // return this.http.delete(this.getURL(["usuario_time/" + ]), { headers: headers })
+    //   .pipe(
+    //     map((data) => {
+    //       return data;
+    //     }),
+    //     catchError((err: HttpErrorResponse) => {
+    //       return Observable.throw(this.handleError(err));
+    //     })
+    //   );
+  }
 }

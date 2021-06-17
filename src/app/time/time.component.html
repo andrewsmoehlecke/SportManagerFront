@@ -97,27 +97,9 @@
           <th scope="col" class="th-nome">Nome</th>
           <th scope="col" class="th-funcao">Função</th>
         </tr>
-        <tr class="tr" *ngFor="let usuarioTime of listUsuarioTime">
-          <td class="td-nome">
-            <div class="div-infos">
-              <mat-form-field class="mat-field" appearance="fill">
-                <mat-label class="mat-label">Selecione o Jogador</mat-label>
-                <mat-select formControlName="usuario">
-                  <mat-option class="mat-option" *ngFor="let usuario of usuarios" [value]="usuario">{{usuario.username}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </td>
-          <td class="td-funcao">
-            <div class="div-infos">
-              <mat-form-field class="mat-field" appearance="fill">
-                <mat-label class="mat-label">Selecione o Time</mat-label>
-                <mat-select formControlName="funcao">
-                  <mat-option class="mat-option" *ngFor="let funcaoT of funcaoTime" [value]="funcaoT">{{funcaoT.nome}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </td>
+        <tr class="tr" *ngFor="let usuarioTime of listUsuarioTime" (click)="editarUsuarioTime(usuarioTime)">
+          <td class="td-nome">{{usuarioTime.usuario.username}}</td>
+          <td class="td-funcao">{{usuarioTime.funcaoTime.nome}}</td>
         </tr>
       </table>
 

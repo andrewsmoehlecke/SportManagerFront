@@ -202,50 +202,66 @@ main {
         align-items: center;
         justify-content: center;
         max-height: 100px;
+
+        .button-info-save {
+          margin: 35px 10% 0 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+          width: 40%;
+          background-color: #50ff4a;
+        }
+  
+        .button-info-delete {
+          margin: 35px 0 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+          width: 40%;
+          background-color: #fa3232;
+        }
+  
+        .button-edit {
+          display: block;
+          margin: 75px auto 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+        }
+  
+        .button-edit:hover {
+          cursor: pointer;
+          background-color: #aaaaaa;
+        }
+  
+        .button-info-save:hover {
+          cursor: pointer;
+          background-color: #00ff00;
+        }
+  
+        .button-info-delete:hover {
+          cursor: pointer;
+          background-color: #ff0000;
+        }
       }
 
-      .button-info-save {
-        margin: 35px 10% 0 0;
-        font-size: 20px;
-        padding: 10px;
-        border: 3px solid #191919;
-        border-radius: 10px;
-        width: 40%;
-        background-color: #50ff4a;
-      }
-
-      .button-info-delete {
-        margin: 35px 0 0;
-        font-size: 20px;
-        padding: 10px;
-        border: 3px solid #191919;
-        border-radius: 10px;
-        width: 40%;
-        background-color: #fa3232;
-      }
-
-      .button-edit {
-        display: block;
-        margin: 75px auto 0;
-        font-size: 20px;
-        padding: 10px;
-        border: 3px solid #191919;
-        border-radius: 10px;
-      }
-
-      .button-edit:hover {
-        cursor: pointer;
-        background-color: #aaaaaa;
-      }
-
-      .button-info-save:hover {
-        cursor: pointer;
-        background-color: #00ff00;
-      }
-
-      .button-info-delete:hover {
-        cursor: pointer;
-        background-color: #ff0000;
+      .button{
+        .button-edit {
+          display: block;
+          margin: 75px auto 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+        }
+    
+        .button-edit:hover {
+          cursor: pointer;
+          background-color: #aaaaaa;
+        }
       }
 
       .h2-info-table {

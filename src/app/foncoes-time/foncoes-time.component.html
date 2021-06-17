@@ -50,15 +50,20 @@
       <h2 class="h2-info">Funcões Time</h2>
       <mat-list class="div-infos">
         <mat-list-item class="item" *ngFor="let funcaoTime of allFuncoesTime">
-            <div mat-line class="line">
-              <button class="button" (click)="passaId(funcaoTime.idFuncaoTime)">
-                <p class="p">{{funcaoTime.nome}}</p>
-              </button>
-            </div>
+          <div mat-line class="line">
+            <button class="button-funcoes" (click)="passaId(funcaoTime.idFuncaoTime)">
+              <p class="button-funcoes-txt">{{funcaoTime.nome}}</p>
+            </button>
+          </div>
         </mat-list-item>
       </mat-list>
     </div>
   </form>
+
+  <button class="button-ft" routerLink="/funcao-time">
+    <img class="button-img-ft" src="../../assets/img/plus.png">
+    <p class="button-txt-ft">Criar Função</p>
+  </button>
 </main>
 
 <footer>

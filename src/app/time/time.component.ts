@@ -187,4 +187,8 @@ export class TimeComponent implements OnInit {
         console.error("Algo de errado não está certo " + err);
       });
   }
+
+  editarUsuarioTime(usuarioTime: UsuarioTimeDto) {
+    this.router.navigate(['/editar-usuario-time', { usuarioTime: JSON.stringify(usuarioTime) }]);
+  }
 }

@@ -97,6 +97,7 @@ header {
         color: #ffffff;
         text-align: center;
         height: 100%;
+        border-radius: 10px;
 
         .usuario-nome-div {
           display: inline-flex;
@@ -129,7 +130,6 @@ header {
       .usuario-button:hover {
         cursor: pointer;
         background-color: #aaaaaa;
-        border-radius: 10px;
       }
     }
   }

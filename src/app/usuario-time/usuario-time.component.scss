@@ -227,7 +227,7 @@ main {
     }
   }
 
-  .button-funcao-time {
+  .button-ft {
     border: 5px solid #191919;
     background-color: #2a2a2a;
     border-radius: 20px;
@@ -238,11 +238,11 @@ main {
     width: 15%;
     height: 100px;
 
-    .button-img {
+    .button-img-ft {
       width: 50px;
     }
 
-    .button-txt {
+    .button-txt-ft {
       position: relative;
       display: inline;
       margin-left: 10px;
@@ -251,7 +251,7 @@ main {
     }
   }
 
-  .button-funcao-time:hover {
+  .button-ft:hover {
     cursor: pointer;
     background-color: #aaaaaa;
     border-color: #888888;

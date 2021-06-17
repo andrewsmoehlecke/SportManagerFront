@@ -14,6 +14,7 @@ import { UsuarioTimeComponent } from './usuario-time/usuario-time.component';
 import { FuncaoTimeComponent } from './funcao-time/funcao-time.component';
 import { ModificarFuncaoTimeComponent } from './modificar-funcao-time/modificar-funcao-time.component';
 import { FoncoesTimeComponent } from './foncoes-time/foncoes-time.component';
+import { EditarUsuarioTimeComponent } from './editar-usuario-time/editar-usuario-time.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'funcoes-time',
     component: FoncoesTimeComponent,
+  },
+  {
+    path: 'editar-usuario-time',
+    component: EditarUsuarioTimeComponent,
   },
   {
     path: '**',

@@ -172,22 +172,61 @@ main {
 
       .div-infos {
         position: relative;
-        margin: 75px auto;
 
-        .button {
-          background-color: #2a2a2a;
-          border: 3px solid #191919;
-          border-radius: 10px;
-          color: #ffffff;
-          font-size: 20px;
-        }
+        .item {
+          margin-bottom: 15px;
 
-        .button:hover {
-          cursor: pointer;
-          background-color: #aaaaaa;
+          .button-funcoes {
+            background-color: #e2e2e2;
+            border: 3px solid #191919;
+            border-radius: 10px;
+            color: #000000;
+            font-size: 20px;
+            padding: 15px;
+            width: 100%;
+            
+            .button-funcoes-txt {
+              margin: 0;
+            }
+          }
+  
+          .button-funcoes:hover {
+            cursor: pointer;
+            background-color: #aaaaaa;
+          }
         }
       }
     }
+  }
+
+  .button-ft {
+    border: 5px solid #191919;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    color: #ffffff;
+    margin: 15px calc(85% / 2) 0px;
+    padding: 20px;
+    text-align: center;
+    width: 15%;
+    height: 100px;
+
+    .button-img-ft {
+      width: 50px;
+    }
+
+    .button-txt-ft {
+      position: relative;
+      display: inline;
+      margin-left: 10px;
+      vertical-align: 18px;
+      font-size: 18px;
+    }
+  }
+
+  .button-ft:hover {
+    cursor: pointer;
+    background-color: #aaaaaa;
+    border-color: #888888;
   }
 }
 
