@@ -212,7 +212,7 @@ main {
           width: 40%;
           background-color: #50ff4a;
         }
-  
+
         .button-info-delete {
           margin: 35px 0 0;
           font-size: 20px;
@@ -222,7 +222,7 @@ main {
           width: 40%;
           background-color: #fa3232;
         }
-  
+
         .button-edit {
           display: block;
           margin: 75px auto 0;
@@ -231,36 +231,20 @@ main {
           border: 3px solid #191919;
           border-radius: 10px;
         }
-  
+
         .button-edit:hover {
           cursor: pointer;
           background-color: #aaaaaa;
         }
-  
+
         .button-info-save:hover {
           cursor: pointer;
           background-color: #00ff00;
         }
-  
+
         .button-info-delete:hover {
           cursor: pointer;
           background-color: #ff0000;
-        }
-      }
-
-      .button{
-        .button-edit {
-          display: block;
-          margin: 75px auto 0;
-          font-size: 20px;
-          padding: 10px;
-          border: 3px solid #191919;
-          border-radius: 10px;
-        }
-    
-        .button-edit:hover {
-          cursor: pointer;
-          background-color: #aaaaaa;
         }
       }
 
@@ -276,20 +260,45 @@ main {
         font-size: 20px;
         color: #ffffff;
 
-        .tr {
-          padding: 15px auto;
+        .tr, .th {
+          .th-nome, .th-funcao, .th-cargo {
+            padding: 15px 30px;
+            font-weight: bold;
+            border-bottom: 1px solid #ffffff;
+          }
 
-          .td-nome, .td-funcao {
-            border-top: 1px solid #ffffff;
+          .td-nome, .td-funcao, .td-cargo {
+            padding: 15px 30px;
           }
 
           .td-nome {
             padding-right: 10px;
           }
 
-          .th-funcao, .td-funcao {
-            padding-left: 120px;
+          .th-funcao, .td-funcao, .th-cargo, .td-cargo {
+            padding-left: 90px;
           }
+        }
+
+        .tr:hover {
+          background-color: #777777;
+          cursor: pointer;
+        }
+      }
+
+      .button{
+        .button-edit {
+          display: block;
+          margin: 75px auto 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+        }
+
+        .button-edit:hover {
+          cursor: pointer;
+          background-color: #aaaaaa;
         }
       }
     }
