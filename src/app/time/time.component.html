@@ -93,15 +93,15 @@
       <h2 class="h2-info-table">Jogadores</h2>
 
       <table class="table">
-        <tr class="tr">
+        <tr class="th">
           <th class="th-nome">Nome</th>
           <th class="th-funcao">Função</th>
-          <th class="th-funcao">Cargo</th>
+          <th class="th-cargo">Cargo</th>
         </tr>
         <tr class="tr" *ngFor="let usuarioTime of listUsuarioTime" (click)="editarUsuarioTime(usuarioTime)">
           <td class="td-nome">{{usuarioTime.usuario.username}}</td>
           <td class="td-funcao">{{usuarioTime.funcaoTime.nome}}</td>
-          <td class="td-funcao">{{usuarioTime.cargo}}</td>
+          <td class="td-cargo">{{usuarioTime.cargo}}</td>
         </tr>
       </table>
 

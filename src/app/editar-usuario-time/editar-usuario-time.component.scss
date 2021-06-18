@@ -139,7 +139,118 @@ header {
 /* --------------------------------- MAIN --------------------------------- */
 /* --------------------------------- MAIN --------------------------------- */
 
+main {
+  font-family: "Titillium Web", sans-serif;
+  margin: 0;
+  padding: 50px;
 
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-group {
+      position: relative;
+      border: 5px solid #191919;
+      background-color: #2a2a2a;
+      width: 30%;
+      padding: 70px;
+      border-radius: 50px;
+
+      .h2-info {
+        color: #ffffff;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 70px;
+
+        .nome-usuario {
+          text-decoration: none;
+          font-weight: bold;
+          color: #ca22ca;
+        }
+      }
+
+      .div-infos {
+        position: relative;
+
+        .mat-field {
+          display: block;
+          width: 60%;
+          margin: 0px;
+          text-decoration: none;
+          border-radius: 5px;
+
+          .mat-label {
+            color: #ffffff;
+
+            .mat-option {
+              color: #ffffff;
+            }
+          }
+        }
+
+        .label-info {
+          position: relative;
+          font-size: 20px;
+          margin: 5px;
+          color: #ffffff;
+          margin-bottom: 10px;
+        }
+
+        .input-info {
+          display: block;
+          position: relative;
+          border-radius: 5px;
+          border-color: #191919;
+          padding: 10px;
+          margin-bottom: 35px;
+          outline: none;
+          width: 100%;
+          background-color: #ffffff;
+          font-size: 20px;
+          color: #000000;
+        }
+      }
+
+      .button-info-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 100px;
+
+        .button-info-save {
+          margin: 35px 10% 0 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+          width: 40%;
+          background-color: #50ff4a;
+        }
+
+        .button-info-delete {
+          margin: 35px 0 0;
+          font-size: 20px;
+          padding: 10px;
+          border: 3px solid #191919;
+          border-radius: 10px;
+          width: 40%;
+          background-color: #fa3232;
+        }
+
+        .button-info-save:hover {
+          cursor: pointer;
+          background-color: #00ff00;
+        }
+
+        .button-info-delete:hover {
+          cursor: pointer;
+          background-color: #ff0000;
+        }
+      }
+    }
+  }
+}
 
 /* --------------------------------- FOOTER --------------------------------- */
 /* --------------------------------- FOOTER --------------------------------- */

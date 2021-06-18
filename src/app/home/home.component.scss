@@ -141,6 +141,16 @@ header {
 
 main {
   min-height: 51.9%;
+  .h3-bem-vindo {
+    position: absolute;
+    font-size: 65px;
+    margin: 200px 665px 0;
+
+    .nome-usuario {
+      font-weight: bold;
+      color: #ca22ca;
+    }
+  }
 }
 
 /* --------------------------------- FOOTER --------------------------------- */
