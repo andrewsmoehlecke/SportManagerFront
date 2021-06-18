@@ -59,6 +59,8 @@ export class PerfilComponent implements OnInit {
         fotoPerfil: data.fotoPerfil,
       });
 
+      this.usuarioLogado.saveUsuarioLogado(data);
+
       Swal.fire({
         position: 'center',
         icon: 'success',
