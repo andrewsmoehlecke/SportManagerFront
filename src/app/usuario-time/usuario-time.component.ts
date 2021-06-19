@@ -78,7 +78,7 @@ export class UsuarioTimeComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Usuário cadastrado no Time! :(',
+        title: 'Usuário cadastrado no Time!',
         timer: 2200,
         showConfirmButton: false
       });

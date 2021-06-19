@@ -51,7 +51,7 @@ export class ModificarFuncaoTimeComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Função time atualizada! :(',
+        title: 'Função time atualizada!',
         timer: 2200,
         showConfirmButton: false
       });

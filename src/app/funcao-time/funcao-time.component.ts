@@ -33,7 +33,7 @@ export class FuncaoTimeComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Função criada! :(',
+        title: 'Função criada!',
         timer: 2200,
         showConfirmButton: false
       });

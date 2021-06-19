@@ -51,7 +51,7 @@ export class CriarJogoComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Jogo criado com sucesso! :(',
+        title: 'Jogo criado com sucesso!',
         timer: 2200,
         showConfirmButton: false
       });
